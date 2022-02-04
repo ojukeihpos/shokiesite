@@ -1,26 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
+import Background from './Background';
+
 import './App.css';
+import Menu from './Menu';
+import About from './About';
+import Socials from './Socials';
+import { Route, Routes } from 'react-router-dom';
+import DebugScreen from './DebugScreen';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+export default class App extends React.Component<{}, {}> {
+  state = {
+    focused: false,
+  }
+  constructor(props: {}, state: {}) {
+    super(props)
+  }
+  public render() {
+    return <div className="App">
+        <Background/>
+        <Menu/>
+        <DebugScreen focused={this.state.focused}/>
+        <Routes>
+          <Route path="/about" element={<About/>}/>
+          <Route path="/socials" element={<Socials/>}/>
+          <Route path="/DEBUG" />
+        </Routes>
     </div>
-  );
+  }
 }
-
-export default App;
