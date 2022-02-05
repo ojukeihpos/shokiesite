@@ -13,4 +13,38 @@
     margin-left: 10%;
     filter: blur(1px);
     display: block;
+    animation: fadeinbar 0.5s;
+}
+
+@keyframes fadeinbar {
+    from {
+        height: 0%;
+    }
+    to {
+        height: 100%;
+    }
+}
+@-moz-keyframes fadeinbar { /* Firefox */
+    from {
+        height: 0%;
+    }
+    to {
+        height: 100%;
+    }
+}
+@-webkit-keyframes fadeinbar { /* Safari and Chrome */
+    from {
+        height: 0%;
+    }
+    to {
+        height: 100%;
+    }
+}
+@-o-keyframes fadeinbar { /* Opera */
+    from {
+        height: 0%;
+    }
+    to {
+        height: 100%;
+    }
 }

@@ -19,19 +19,9 @@ export default class List extends React.Component<{}, {}> {
             },
             {
                 id: 2,
-                text: "DEBUG",
-                page: "DEBUG"
+                text: "Hardware",
+                page: "hardware"
             },
-            {
-                id: 3,
-                text: "DEBUG2",
-                page: "#"
-            },
-            {
-                id: 4,
-                text: "DEBUG3",
-                page: "#"
-            }
         ],
         selected: 0,
     }
@@ -47,7 +37,7 @@ export default class List extends React.Component<{}, {}> {
                         this.setState({selected: item.id})
                         console.log("Selected: " + this.state.selected)
                     }}>
-                        <Link to={"/" + item.page}><text className={this.state.selected === item.id ? "clickable selected" : "clickable"}>{item.text}</text></Link>
+                        <Link to={"/" + item.page}><p className={this.state.selected === item.id ? "list-item-text clickable selected" : "list-item-text clickable"}>{item.text}</p></Link>
                     </li>
                     
                 ))}

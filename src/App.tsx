@@ -5,8 +5,9 @@ import './App.css';
 import Menu from './Menu';
 import About from './About';
 import Socials from './Socials';
+import Hardware from './Hardware';
 import { Route, Routes } from 'react-router-dom';
-import DebugScreen from './DebugScreen';
+import './screen.css'
 
 export default class App extends React.Component<{}, {}> {
   state = {
@@ -19,11 +20,11 @@ export default class App extends React.Component<{}, {}> {
     return <div className="App">
         <Background/>
         <Menu/>
-        <DebugScreen focused={this.state.focused}/>
         <Routes>
           <Route path="/about" element={<About/>}/>
           <Route path="/socials" element={<Socials/>}/>
-          <Route path="/DEBUG" />
+          <Route path="/hardware" element={<Hardware/>}/>
+          <Route path="/"/>
         </Routes>
     </div>
   }

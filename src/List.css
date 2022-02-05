@@ -68,19 +68,19 @@ li:nth-child(5n+5) {
     background: linear-gradient(to left,rgba(119,103,104,0),rgba(179,140,103, 0.5)) right;
     background-position: left;
     transition: .1s all ease-in;
-    animation: fadeinhighlight 1s
+    animation: fadeinhighlight 1s;
 }
 
 a {
     all: unset;
 }
 
-text {
-    color:rgba(183,251,255,255);
+.list-item-text {
+    color:rgba(183,251,255,255) !important;
     font-size: xx-large;
 }
 
-text.selected {
+.list-item-text.selected {
     animation: pulsate 2.5s infinite alternate;   
 }
 
@@ -179,4 +179,5 @@ text.selected {
 
 .clickable {
     cursor: pointer;
+    color: rgba(199,73,171,255);
 }
