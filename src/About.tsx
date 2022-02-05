@@ -7,7 +7,7 @@ export default class About extends React.Component<{}, {}> {
                 <div className='horizontal-line up'/>
                 <div className='horizontal-line down'/>
                 <div className='screen'>
-                    <div className='screen-header'><p>About Me<Link to="/"><img className='close-button clickable' src={require('./assets/images/exit.png')}/></Link></p></div>
+                    <div className='screen-header'><p>shokie's specs<Link to="/"><img className='close-button clickable' src={require('./assets/images/exit.png')}/></Link></p></div>
                     <div className='screen-text'><p>🌸 I'm a girl on the internet. <a href='https://pronoun.is/she' className='clickable'>she/her</a>
                         <br/>
                         🌸 cosplayer, engineer, egirl, internet goth mom, plane enthusiast, lesbian
