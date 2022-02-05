@@ -6,6 +6,7 @@ import Menu from './Menu';
 import About from './About';
 import Socials from './Socials';
 import Hardware from './Hardware';
+import Playlist from './Playlist';
 import { Route, Routes } from 'react-router-dom';
 import './screen.css'
 
@@ -24,6 +25,7 @@ export default class App extends React.Component<{}, {}> {
           <Route path="/about" element={<About/>}/>
           <Route path="/socials" element={<Socials/>}/>
           <Route path="/hardware" element={<Hardware/>}/>
+          <Route path="/playlist" element={<Playlist/>}/>
           <Route path="/"/>
         </Routes>
     </div>

@@ -33,9 +33,10 @@
 }
 
 .screen-text {
-    padding: 20px 20px 0px;
+    padding: 20px 20px 20px;
     display: block;
     text-align: left;
+    height: 87%;
 }
 
 .close-button {
@@ -89,26 +90,38 @@
 }
 @-moz-keyframes screenAppear { /* Firefox */
     from {
+        top: 50%;
         height: 0%;
+        opacity: 0;
     }
     to {
+        top: 10%;
         height: 75%;
+        opacity: 1;
     }
 }
 @-webkit-keyframes screenAppear { /* Safari and Chrome */
     from {
+        top: 50%;
         height: 0%;
+        opacity: 0;
     }
     to {
+        top: 10%;
         height: 75%;
+        opacity: 1;
     }
 }
 @-o-keyframes screenAppear { /* Opera */
     from {
+        top: 50%;
         height: 0%;
+        opacity: 0;
     }
     to {
+        top: 10%;
         height: 75%;
+        opacity: 1;
     }
 }
 

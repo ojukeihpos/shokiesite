@@ -22,6 +22,11 @@ export default class List extends React.Component<{}, {}> {
                 text: "Hardware",
                 page: "hardware"
             },
+            {
+                id: 3,
+                text: "Playlist",
+                page: "playlist"
+            },
         ],
         selected: 0,
     }
