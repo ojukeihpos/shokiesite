@@ -12,9 +12,9 @@ export default class About extends React.Component<{}, {}> {
                         <br/>
                         🌸 cosplayer, engineer, egirl, internet goth mom, plane enthusiast, lesbian
                         <br/>
-                        🌸 former fighting game player
-                        <br/>
                         🌸 UW/Laurier CS student
+                        <br/>
+                        🌸 Leader of the Maiden Squadron
                         <br/>
                         <hr/>
                         <p style={{textAlign: "center"}}>Game ranks</p>
