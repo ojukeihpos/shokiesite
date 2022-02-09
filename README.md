@@ -38,7 +38,7 @@ Router:
 Art:
  - [ultineet](https://twitter.com/ultineet)
  - [ChouGokuOozaru](https://twitter.com/ChouGokuOozaru)
- - 
+
 Website Design Choices:
  - [Vincent Nguyen](https://github.com/nvplus/)
  - [CedarSkye](https://github.com/cedarskye/)
