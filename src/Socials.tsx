@@ -15,6 +15,8 @@ export default class Socials extends React.Component<{}, {}> {
                         🌸 <a href='https://github.com/ojukeihpos' className='clickable'>GitHub</a>
                         <br/>
                         🌸 Discord: shokie#0104
+                        <br/>
+                        <a href='https://sungan.ca/' className='clickable'>sungan</a>
                         </p>
                     </div>
                 </div>
