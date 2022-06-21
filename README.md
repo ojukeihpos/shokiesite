@@ -29,7 +29,7 @@ Router:
 
 | Color             | Hex                                                                |
 | ----------------- | ------------------------------------------------------------------ |
-| Text | ![#b7fbff)](https://via.placeholder.com/10/b7fbff?text=+) rgba(#b7fbff) |
+| Text | ![#b7fbff](https://via.placeholder.com/10/b7fbff?text=+) rgba(#b7fbff) |
 | Clickable Text | ![#c749ab](https://via.placeholder.com/10/c749ab?text=+) #c749ab |
 | Screen Background | ![#35335a](https://via.placeholder.com/10/35335a?text=+) #35335a |
 
