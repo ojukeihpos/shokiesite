@@ -25,7 +25,8 @@ CSS:
 - Filtering
 
 Router:
-- Migration from v5 to v6## Color Reference
+- Migration from v5 to v6
+## Color Reference
 
 | Color             | Hex                                                                |
 | ----------------- | ------------------------------------------------------------------ |
