@@ -9,14 +9,14 @@ Website to display my personal data, work profile, and combat data.
 http://shokie.xyz
 ## Authors
 
-- [Sophie](https://www.twitter.com/shokiedoki)
+- Sophie
 
 
 ## Tech Stack
 
 **Client:** React, Router v6, CSS
 
-**Server:** Node, Heroku, Domain hosting service (Namecheap)
+**Server:** NodeJS, Netlify, Domain hosting service (Namecheap)
 
 ## Lessons Learned
 
