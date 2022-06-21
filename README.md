@@ -1,12 +1,12 @@
 
 # The Hangar
 
-Website to display my personal data, work profile, and combat data.
+Personal website that acts as an information display and portfolio.
 
 
 ## Used By
 
-http://shokie.xyz
+https://shokie.xyz
 ## Authors
 
 - Sophie
