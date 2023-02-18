@@ -10,11 +10,9 @@ export default class About extends React.Component<{}, {}> {
                     <div className='screen-header'><p>Shoka's specs<Link to="/"><img className='close-button clickable' src={require('./assets/images/exit.png')} alt=''/></Link></p></div>
                     <div className='screen-text'><p>🌸 i'm a girl on the internet. <a href='https://pronoun.is/she' className='clickable'>she/her</a>
                         <br/>
-                        🌸 cosplayer, engineer, egirl, internet goth mom, plane enthusiast, pansexual
+                        🌸 cosplayer, engineer, plane enthusiast
                         <br/>
-                        🌸 UW/Laurier CS student
-                        <br/>
-                        🌸 Rhyme's GF
+                        🌸 UW/Laurier CS graduate
                         <br/>
                         <hr/>
                         <p style={{textAlign: "center"}}>Game ranks</p>
@@ -38,6 +36,8 @@ export default class About extends React.Component<{}, {}> {
                         Yu-Gi-Oh! Master Duel
                         <br/>
                         Minecraft
+                        <br/>
+                        Mahjong
                         </p>
                     </div>
                 </div>
