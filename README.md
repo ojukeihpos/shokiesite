@@ -1,22 +1,22 @@
 
 # The Hangar
 
-Website to display my personal data, work profile, and combat data.
+Personal website that acts as an information display and portfolio.
 
 
 ## Used By
 
-http://shokie.xyz
+https://shokie.xyz
 ## Authors
 
-- [Sophie](https://www.twitter.com/shokiedoki)
+- Sophie
 
 
 ## Tech Stack
 
 **Client:** React, Router v6, CSS
 
-**Server:** Node, Heroku, Domain hosting service (Namecheap)
+**Server:** NodeJS, Netlify, Domain hosting service (Namecheap)
 
 ## Lessons Learned
 
@@ -25,11 +25,12 @@ CSS:
 - Filtering
 
 Router:
-- Migration from v5 to v6## Color Reference
+- Migration from v5 to v6
+## Color Reference
 
 | Color             | Hex                                                                |
 | ----------------- | ------------------------------------------------------------------ |
-| Text | ![#b7fbff)](https://via.placeholder.com/10/b7fbff?text=+) rgba(#b7fbff) |
+| Text | ![#b7fbff](https://via.placeholder.com/10/b7fbff?text=+) rgba(#b7fbff) |
 | Clickable Text | ![#c749ab](https://via.placeholder.com/10/c749ab?text=+) #c749ab |
 | Screen Background | ![#35335a](https://via.placeholder.com/10/35335a?text=+) #35335a |
 
