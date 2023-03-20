@@ -1,0 +1,23 @@
+.tab {
+    border: 2px solid #C3A915;
+    text-align: center;
+    vertical-align: middle;
+    width: fit-content;
+    block-size: fit-content;
+    height: 50px;
+    transform: skew(-20deg);
+    cursor: pointer;
+    padding: 15px 20px 0px 15px;
+    transform: skew(-20deg);
+    transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.tab:hover {
+    background-color: #C3A915;
+}
+
+.tab > p {
+    transform: skew(20deg);
+    width: max-content;
+    font-family: 'Raleway', sans-serif;
+}

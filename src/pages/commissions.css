@@ -1,0 +1,58 @@
+.panel {
+    position: absolute;
+    top: calc(10vh - 5px);
+    right: 0;
+    --alignment: center;
+    --flex-alignment: center;
+    --indent-left: 1;
+    --indent-right: 1;
+    --border-radius-tl: 0;
+    --border-radius-tr: 0;
+    --border-radius-br: 0;
+    --border-radius-bl: 0;
+    align-items: center;
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+    justify-content: center;
+    height: calc(90vh + 10px);
+    max-width: 100%;
+    position: absolute;
+    text-align: var(--alignment);
+    z-index: 1;
+    background-color: white;
+    border-left: 5px solid #69C1A5;
+    opacity: 75%;
+    --width: calc(100% - 35rem);
+    width: var(--width);
+    animation: 0.2s ease-out 0s 1 slideFromRight;
+}
+
+@keyframes slideFromRight {
+    0% { transform: translateX(100%) }
+    100% { transform: translateX(0)}
+}
+
+.panel > .inner {
+    --padding-horizontal: 3.375rem;
+    --padding-vertical: 4.25rem;
+    --spacing: 1.25rem;
+    border-radius: var(--border-radius-tl) var(--border-radius-tr) var(--border-radius-br) var(--border-radius-bl);
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+    width: var(--width);
+    z-index: 1;
+    padding: var(--padding-vertical) var(--padding-horizontal);
+    overflow-y: scroll;
+}
+
+.panel > .inner::-webkit-scrollbar {
+    display: none;
+}
+
+.panel > .inner > * {
+    margin-top: var(--spacing);
+    margin-bottom: var(--spacing);
+    transition: opacity 1s ease-in-out 0s;
+}
