@@ -13,11 +13,16 @@
 }
 
 .tab:hover {
-    background-color: #C3A915;
+    background-color: rgba(105,193,165, 0.4);
 }
 
 .tab > p {
     transform: skew(20deg);
     width: max-content;
     font-family: 'Raleway', sans-serif;
+    color: #C3A915;
+}
+
+a:link {
+    text-decoration: none;
 }

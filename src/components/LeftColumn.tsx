@@ -25,14 +25,12 @@ export default class LeftColumn extends React.Component<{}, {}> {
                     <span className='p'>
                         <strong>♡ ♡ ♡ ♡ ♡</strong>
                     </span>
-                    <span className="p">Base cost is $20 USD. +$15 for colour & +$5 for Minion<br /> Fill out the form below.</span>
+                    <span className="p">Base cost is $20 USD. +$15 for colour & +$5 for Minion</span>
                     <span className="p">I cannot guarantee I will choose everyone, depends on the demand.<br /> I do these in my free time out of my working hours on weekends, so expect to have them sent to you in the week following!</span>
-                    <span className="p"><strong>PS : Please make sure your Twitter DMs are open so I can contact you! I'd rather not use e-mail.</strong></span>
+                    
                     <span className="p">♡→ <a href="https://docs.google.com/forms/d/e/1FAIpQLSffCHgpizmROOneAeKLJNpUpJsfcON_W-YHSztYzS6w9C8SOQ/viewform"><strong>Form</strong></a> ←♡</span>
                 </p>
-                <div id="table01" className="table-wrapper"><div className="table-inner"><table><thead><tr><th>⬐ (๑˘︶˘๑) Yes!</th><th></th><th>⬐ (｡•́︿•̀｡) No!</th></tr></thead><tbody><tr><td>♥ WoL's / OC's</td><td>✖</td><td>Mech's / Anthros</td></tr><tr><td>♥ Nudity <strong>(NO LALAFELL/LOLI)</strong></td><td>✖</td><td>Mounts</td></tr><tr><td>♥ Casual-Wear / Light Armour</td><td>✖</td><td>Heavy Armor</td></tr><tr><td>♥ Minions / Companions</td><td>✖</td><td>Sexual Acts</td></tr></tbody></table></div></div>
-                <p id="text10"><em>sorry hroth players.... ;;</em></p>
-                <hr id="divider06"></hr>
+                <hr id="divider06"/>
             </div>
         </div>
     }

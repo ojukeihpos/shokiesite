@@ -31,31 +31,31 @@ body:before {
 
 @keyframes bg {
   0% {
-    background-image: linear-gradient(to right, white, rgba(235,215,209,0.322) 50%), linear-gradient(to bottom, white, rgba(235,215,209,0.322) 20%), url('../assets/bg/bg (1).jpg');
+    background-image: linear-gradient(to right, white, rgba(235,215,209,0.322) 50%), linear-gradient(to bottom, white, rgba(235,215,209,0.322) 20%), url('./assets/bg/bg (1).jpg');
   }
   12.5% {
-    background-image: linear-gradient(to right, white, rgba(235,215,209,0.322) 50%), linear-gradient(to bottom, white, rgba(235,215,209,0.322) 20%), url('../assets/bg/bg (1).png');
+    background-image: linear-gradient(to right, white, rgba(235,215,209,0.322) 50%), linear-gradient(to bottom, white, rgba(235,215,209,0.322) 20%), url('./assets/bg/bg (1).png');
   }
   25% {
-    background-image: linear-gradient(to right, white, rgba(235,215,209,0.322) 50%), linear-gradient(to bottom, white, rgba(235,215,209,0.322) 20%), url('../assets/bg/bg (2).jpg');
+    background-image: linear-gradient(to right, white, rgba(235,215,209,0.322) 50%), linear-gradient(to bottom, white, rgba(235,215,209,0.322) 20%), url('./assets/bg/bg (2).jpg');
   }
   37.5% {
-    background-image: linear-gradient(to right, white, rgba(235,215,209,0.322) 50%), linear-gradient(to bottom, white, rgba(235,215,209,0.322) 20%), url('../assets/bg/bg (2).png');
+    background-image: linear-gradient(to right, white, rgba(235,215,209,0.322) 50%), linear-gradient(to bottom, white, rgba(235,215,209,0.322) 20%), url('./assets/bg/bg (2).png');
   }
   50% {
-    background-image: linear-gradient(to right, white, rgba(235,215,209,0.322) 50%), linear-gradient(to bottom, white, rgba(235,215,209,0.322) 20%), url('../assets/bg/bg (3).png');
+    background-image: linear-gradient(to right, white, rgba(235,215,209,0.322) 50%), linear-gradient(to bottom, white, rgba(235,215,209,0.322) 20%), url('./assets/bg/bg (3).png');
   }
   62.5% {
-    background-image: linear-gradient(to right, white, rgba(235,215,209,0.322) 50%), linear-gradient(to bottom, white, rgba(235,215,209,0.322) 20%), url('../assets/bg/bg (4).png');
+    background-image: linear-gradient(to right, white, rgba(235,215,209,0.322) 50%), linear-gradient(to bottom, white, rgba(235,215,209,0.322) 20%), url('./assets/bg/bg (4).png');
   }
   75% {
-    background-image: linear-gradient(to right, white, rgba(235,215,209,0.322) 50%), linear-gradient(to bottom, white, rgba(235,215,209,0.322) 20%), url('../assets/bg/bg (5).png');
+    background-image: linear-gradient(to right, white, rgba(235,215,209,0.322) 50%), linear-gradient(to bottom, white, rgba(235,215,209,0.322) 20%), url('./assets/bg/bg (5).png');
   }
   87.5% {
-    background-image: linear-gradient(to right, white, rgba(235,215,209,0.322) 50%), linear-gradient(to bottom, white, rgba(235,215,209,0.322) 20%), url('../assets/bg/bg (6).png');
+    background-image: linear-gradient(to right, white, rgba(235,215,209,0.322) 50%), linear-gradient(to bottom, white, rgba(235,215,209,0.322) 20%), url('./assets/bg/bg (6).png');
   }
   100% {
-    background-image: linear-gradient(to right, white, rgba(235,215,209,0.322) 50%), linear-gradient(to bottom, white, rgba(235,215,209,0.322) 20%), url('../assets/bg/bg (7).png');
+    background-image: linear-gradient(to right, white, rgba(235,215,209,0.322) 50%), linear-gradient(to bottom, white, rgba(235,215,209,0.322) 20%), url('./assets/bg/bg (7).png');
   }
 }
 

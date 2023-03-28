@@ -207,67 +207,6 @@ a {
     transition: color 0.25s ease;
 }
 
-#table01 {
-    text-transform: lowercase;
-    color: #545454;
-    font-family: 'Source Sans Pro', sans-serif;
-    letter-spacing: -0.025rem;
-    font-size: 0.875em;
-    line-height: 1.375;
-    font-weight: 400;
-}
-
-.table-wrapper {
-    max-width: 100%;
-    -webkit-overflow-scrolling: touch;
-    overflow-x: auto;
-    overflow-y: hidden;
-}
-
-#table01 .table-inner {
-    width: 32rem;
-}
-
-.table-inner {
-    display: inline-block;
-    max-width: 100%;
-}
-
-table {
-    direction: var(--site-language-direction);
-    text-align: var(--site-language-alignment);
-    width: 100%;
-}
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-#table01 thead {
-    border-bottom: solid 2px #D9D9D9;
-}
-
-tr {
-    display: table-row;
-    vertical-align: inherit;
-    border-color: inherit;
-}
-
-#table01 th:first-child, #table01 td:first-child {
-    padding-left: 0;
-}
-#table01 th, #table01 td {
-    padding: 0.125rem 0.171875rem;
-}
-
-#text10 {
-    color: #545454;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 0.75em;
-    line-height: 1.375;
-    font-weight: 400;
-}
-
 em {
     font-style: italic;
 }

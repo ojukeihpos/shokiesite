@@ -15,6 +15,7 @@ export default class App extends React.Component<{}, {
       tabID: 0,
     })
   }
+  
   render() {
     return <div className="App">
       <Header/>
@@ -23,6 +24,7 @@ export default class App extends React.Component<{}, {
         <Route path="/gallery" element={<Commissions/>}/>
         <Route path="/prices" element={<Commissions/>}/>
         <Route path="/commission form" element={<Commissions/>}/>
+        <Route path="/"/>
       </Routes>
     </div>
   }

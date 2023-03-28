@@ -1,11 +1,12 @@
 import React from 'react'
 import './Header.css'
 import Tab from './Tab'
+import { Link } from 'react-router-dom';
 
 export default class Header extends React.Component<{}, {}> {
     render() {
         return <div id="header">
-            <div id="artistName">Yomi Sato</div>
+            <Link to="/" id="artistName">Yomi Sato</Link>
             <div className="tabs">
                 <Tab text="gallery"/>
                 <Tab text="prices"/>
