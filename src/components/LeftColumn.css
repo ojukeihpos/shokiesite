@@ -21,7 +21,7 @@
     z-index: 1;
     background-color: white;
     border-right: 5px solid #69C1A5;
-    opacity: 75%;
+    opacity: 0.75;
 }
 
 #main > .inner {
