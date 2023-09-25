@@ -1,22 +1,19 @@
-@font-face {
-    font-family: 'ACES07_Regular';
-    src: local('ACES07_Regular') url("./assets/fonts/ACES07_Regular.ttf") format('truetype');
-}
-
 ul {
     margin: 0;
     padding: 0;
     position: absolute;
     text-align: left;
-    top: 20%;
-    margin-left: calc(10% + 20px);
+    top: max(100px, 10vh);
+    margin-left: max(125px, 6vw);
     display: block;
     width: auto;
+    transform: skew(-5deg);
 }
 
 li {
+    position: relative;
     list-style-type: none;
-    padding-left: 10px;
+    padding-left: 2vw;
     opacity: 0%;
     animation: fadeintext 1s;
     animation-fill-mode: forwards;
@@ -48,27 +45,27 @@ li:nth-child(5n+5) {
 }
 
 #cursor {
-    background-color: rgba(251,252,249,255);
+    background-color: rgba(251, 252, 249, 255);
     position: absolute;
-    left: calc(10% + 5px);
     width: 10px;
-    min-height: 43px;
-    top: 20%;
+    top: 0;
     filter: blur(2px);
-    box-shadow: 0 0 5px 5px rgba(195,151,109,255);
+    box-shadow: 0 0 5px 5px rgba(195, 151, 109, 255);
     transition: .1s all ease-in;
+    z-index: 1;
+    transform-origin: bottom;
 }
 
 #highlight {
     position: absolute;
-    width: 50%;
-    min-height: 43px;
-    left: calc(10% + 20px);
-    padding-left: 15px;
-    background: linear-gradient(to left,rgba(119,103,104,0),rgba(179,140,103, 0.5)) right;
+    width: 50vw;
+    left: calc(5%);
+    padding-left: 1vw;
+    background: linear-gradient(to left, rgba(119, 103, 104, 0), rgba(179, 140, 103, 0.5)) right;
     background-position: left;
     transition: .1s all ease-in;
-    animation: fadeinhighlight 1s;
+    animation: fadeinhighlight .1s;
+    z-index: -1;
 }
 
 a {
@@ -76,69 +73,83 @@ a {
 }
 
 .list-item-text {
-    color:rgba(183,251,255,255) !important;
+    color: rgba(183, 251, 255, 255) !important;
     font-size: xx-large;
 }
 
 .list-item-text.selected {
-    animation: pulsate 2.5s infinite alternate;   
+    animation: pulsate 2.5s infinite alternate;
 }
 
 @keyframes pulsate {
     100% {
-      /* Larger blur radius */
-      text-shadow:
-        0 0 4px #fff,
-        0 0 11px #fff,
-        0 0 19px #fff,
-        0 0 40px rgba(128, 218, 245, 0.2),
-        0 0 80px rgba(128, 218, 245, 0.2),
-        0 0 90px rgba(128, 218, 245, 0.2),
-        0 0 100px rgba(128, 218, 245, 0.2),
-        0 0 150px rgba(128, 218, 245, 0.2);
+        /* Larger blur radius */
+        text-shadow:
+            0 0 4px #fff,
+            0 0 11px #fff,
+            0 0 19px #fff,
+            0 0 40px rgba(128, 218, 245, 0.2),
+            0 0 80px rgba(128, 218, 245, 0.2),
+            0 0 90px rgba(128, 218, 245, 0.2),
+            0 0 100px rgba(128, 218, 245, 0.2),
+            0 0 150px rgba(128, 218, 245, 0.2);
     }
+
     0% {
-      /* Smaller blur radius */
-      text-shadow:
-        0 0 2px #fff,
-        0 0 4px #fff,
-        0 0 6px #fff,
-        0 0 10px rgba(128, 218, 245, 0.2),
-        0 0 45px rgba(128, 218, 245, 0.2),
-        0 0 55px rgba(128, 218, 245, 0.2),
-        0 0 70px rgba(128, 218, 245, 0.2),
-        0 0 80px rgba(128, 218, 245, 0.2);
+        /* Smaller blur radius */
+        text-shadow:
+            0 0 2px #fff,
+            0 0 4px #fff,
+            0 0 6px #fff,
+            0 0 10px rgba(128, 218, 245, 0.2),
+            0 0 45px rgba(128, 218, 245, 0.2),
+            0 0 55px rgba(128, 218, 245, 0.2),
+            0 0 70px rgba(128, 218, 245, 0.2),
+            0 0 80px rgba(128, 218, 245, 0.2);
     }
-  }
+}
 
 @keyframes fadeinhighlight {
     from {
         width: 0%;
     }
+
     to {
         width: 50%;
     }
 }
-@-moz-keyframes fadeinhighlight { /* Firefox */
+
+@-moz-keyframes fadeinhighlight {
+
+    /* Firefox */
     from {
         width: 0%;
     }
+
     to {
         width: 50%;
     }
 }
-@-webkit-keyframes fadeinhighlight { /* Safari and Chrome */
+
+@-webkit-keyframes fadeinhighlight {
+
+    /* Safari and Chrome */
     from {
         width: 0%;
     }
+
     to {
         width: 50%;
     }
 }
-@-o-keyframes fadeinhighlight { /* Opera */
+
+@-o-keyframes fadeinhighlight {
+
+    /* Opera */
     from {
         width: 0%;
     }
+
     to {
         width: 50%;
     }
@@ -148,30 +159,43 @@ a {
     from {
         opacity: 0%;
     }
+
     to {
         opacity: 100%;
     }
 }
-@-moz-keyframes fadeintext { /* Firefox */
+
+@-moz-keyframes fadeintext {
+
+    /* Firefox */
     from {
         opacity: 0%;
     }
+
     to {
         opacity: 100%;
     }
 }
-@-webkit-keyframes fadeintext { /* Safari and Chrome */
+
+@-webkit-keyframes fadeintext {
+
+    /* Safari and Chrome */
     from {
         opacity: 0%;
     }
+
     to {
         opacity: 100%;
     }
 }
-@-o-keyframes fadeintext { /* Opera */
+
+@-o-keyframes fadeintext {
+
+    /* Opera */
     from {
         opacity: 0%;
     }
+
     to {
         opacity: 100%;
     }
@@ -179,5 +203,5 @@ a {
 
 .clickable {
     cursor: pointer;
-    color: rgba(199,73,171,255);
+    color: rgba(199, 73, 171, 255);
 }

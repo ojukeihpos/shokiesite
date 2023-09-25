@@ -1,3 +1,8 @@
+* {
+  font-family: "DotGothic16";
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
@@ -5,7 +10,85 @@
 p {
   margin-top: 0;
   margin-bottom: 0;
-  color:rgba(183,251,255,255);
-  font-size: x-large;
+  color: rgba(183, 251, 255, 255);
+  font-size: large;
   display: block;
+}
+
+#shoka__name {
+  position: fixed;
+  top: 0;
+  left: 5rem;
+  z-index: 300;
+  font-size: 2.5rem;
+  color: white;
+  transform: skew(-5deg);
+}
+
+#shoka__name:hover {
+  color: rgb(240, 179, 255);
+}
+
+#shoka__frame {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 100vh;
+  border: solid 30px #4d00f2;
+  pointer-events: none;
+}
+
+#shoka__frame::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  width: 408px;
+  height: 453px;
+  background-image: url("./assets/borders/frame_lt_bg.png");
+  background-position: -30px -35px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.shoka__forward-vents {
+  position: absolute;
+  left: 340px;
+  top: 37px;
+  padding-left: 86px;
+  background-image: url("./assets/borders/parts_06.svg");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  width: 78px;
+  height: 11px;
+  pointer-events: all;
+  cursor: default;
+}
+
+.shoka__footer {
+  width: 100%;
+  position: fixed;
+  height: 72px;
+  bottom: 0;
+  left: 0;
+  z-index: 200;
+  background-image: url("./assets/borders/frame_lb_bg.png");
+  background-position: 0px bottom;
+  background-repeat: no-repeat;
+  background-size: 114px;
+}
+
+.parts {
+  position: absolute;
+  z-index: 410;
+}
+
+.straight_vents {
+  bottom: 6px;
+  left: 6px;
+}
+
+a:hover {
+  cursor: pointer;
 }

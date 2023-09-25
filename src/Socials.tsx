@@ -10,15 +10,14 @@ export default class Socials extends React.Component<{}, {}> {
                     <div className='screen-header'><p>socials<Link to="/"><img className='close-button clickable' src={require('./assets/images/exit.png')} alt=''/></Link></p></div>
                     <div className='screen-text'><p>🌸 <a href='https://steamcommunity.com/id/ojukeihpos/' className='clickable'>Steam</a>
                         <br/>
-                        🌸 <a href='https://www.twitch.tv/shokiedoki' className='clickable'>Twitch</a>
+                        🌸 <a href='https://www.twitch.tv/39reimu' className='clickable'>Twitch</a>
                         <br/>
                         🌸 <a href='https://github.com/ojukeihpos' className='clickable'>GitHub</a>
                         <br/>
-                        🌸 Discord: shokie#0104
+                        🌸 Discord: reimu.
                         <br/>
                         🌸 <a href='https://www.instagram.com/shokastarlight/' className='clickable'>Instagram</a>
                         <br/>
-                        <a href='https://sungan.ca/' className='clickable'>sungan</a>
                         </p>
                     </div>
                 </div>

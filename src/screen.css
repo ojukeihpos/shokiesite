@@ -3,16 +3,16 @@
 
 .screen {
     position: absolute;
-    width: 75%;
+    width: 40%;
     height: 0%;
-    background-color: rgba(53,51,90,0.9);
+    background-color: rgba(24, 24, 34, 0.9);
     opacity: 0;
     border-radius: 5px;
     border-style: solid;
     border-width: 2px;
     border-color: rgba(148,176,207,255);
     top: 10%;
-    left: 20%;
+    right: 5%;
     z-index: 1;
     filter: none;
     transform: scale(1);
@@ -30,7 +30,7 @@
     top: 0%;
     left: 50%;
     width: auto;
-    background-color: rgba(53,51,90,1);
+    background-color: rgb(41, 40, 56);
     border-bottom: 3px solid #bbb;
     text-align: center;
     font-size: xx-large
@@ -45,15 +45,16 @@
 
 .close-button {
     position: absolute;
-    top: 8px;
-    display: block;
-    align-self: right;
-    right: 8px;
+    top: 3px;
+    right: 3px;
     width: 30px;
     height: 30px;
     filter: invert(98%) sepia(26%) saturate(4776%) hue-rotate(167deg) brightness(106%) contrast(113%);
     /** filter generator: https://codepen.io/sosuke/pen/Pjoqqp */
     /** RGBA to HEX: https://simplecss.eu/rgbatohex.html */
+    background-image: url('./assets/images/exit.png');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .screen::-webkit-scrollbar {
@@ -62,12 +63,12 @@
 
 .horizontal-line {
     position: absolute;
-    width: 75%;
+    width: 40%;
     height: 2px;
     background-color: rgba(148,176,207,255);
     border-radius: 5px;
     top: 50%;
-    left: calc(20% + 2px);
+    right: 5%;
     
     z-index: 2;
 }
@@ -136,7 +137,7 @@
     }
     50% {
         top: 50%;
-        width: 75%;
+        width: 40%;
     }
     100% {
         top: 10%;
@@ -149,7 +150,7 @@
     }
     50% {
         top: 50%;
-        width: 75%;
+        width: 40%;
     }
     100% {
         top: 10%;
@@ -162,7 +163,7 @@
     }
     50% {
         top: 50%;
-        width: 75%;
+        width: 40%;
     }
     100% {
         top: 10%;
@@ -175,7 +176,7 @@
     }
     50% {
         top: 50%;
-        width: 75%;
+        width: 40%;
     }
     100% {
         top: 10%;
@@ -189,7 +190,7 @@
     }
     50% {
         top: 50%;
-        width: 75%;
+        width: 40%;
     }
     100% {
         top: calc(85% + 2px);
@@ -202,7 +203,7 @@
     }
     50% {
         top: 50%;
-        width: 75%;
+        width: 40%;
     }
     100% {
         top: calc(85% + 2px);
@@ -215,7 +216,7 @@
     }
     50% {
         top: 50%;
-        width: 75%;
+        width: 40%;
     }
     100% {
         top: calc(85% + 2px);
@@ -228,7 +229,7 @@
     }
     50% {
         top: 50%;
-        width: 75%;
+        width: 40%;
     }
     100% {
         top: calc(85% + 2px);
@@ -242,11 +243,11 @@
         0 0 4px #fff,
         0 0 11px #fff,
         0 0 19px #fff,
-        0 0 40px rgba(128, 218, 245, 0.2),
-        0 0 80px rgba(128, 218, 245, 0.2),
-        0 0 90px rgba(128, 218, 245, 0.2),
-        0 0 100px rgba(128, 218, 245, 0.2),
-        0 0 150px rgba(128, 218, 245, 0.2);
+        0 0 40px rgba(77, 0, 242, 0.2),
+        0 0 80px rgba(77, 0, 242, 0.2),
+        0 0 90px rgba(77, 0, 242, 0.2),
+        0 0 100px rgba(77, 0, 242, 0.2),
+        0 0 150px rgba(77, 0, 242, 0.2);
     }
     0% {
       /* Smaller blur radius */
@@ -254,10 +255,10 @@
         0 0 2px #fff,
         0 0 4px #fff,
         0 0 6px #fff,
-        0 0 10px rgba(128, 218, 245, 0.2),
-        0 0 45px rgba(128, 218, 245, 0.2),
-        0 0 55px rgba(128, 218, 245, 0.2),
-        0 0 70px rgba(128, 218, 245, 0.2),
-        0 0 80px rgba(128, 218, 245, 0.2);
+        0 0 10px rgba(77, 0, 242, 0.2),
+        0 0 45px rgba(77, 0, 242, 0.2),
+        0 0 55px rgba(77, 0, 242, 0.2),
+        0 0 70px rgba(77, 0, 242, 0.2),
+        0 0 80px rgba(77, 0, 242, 0.2);
     }
   }

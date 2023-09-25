@@ -2,8 +2,7 @@
     position: absolute;
     z-index: -10;
     width: 100%;
-    height: 100%;
-    height: -webkit-fill-available;
+    height: 100vh;
     min-height: 100%;
     background: linear-gradient(90deg, rgb(174,226,245, 0.7), rgb(13,42,82, 0.7)), url("./assets/images/skies final.png");
     background-size: cover;

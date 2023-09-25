@@ -4,47 +4,56 @@
     height: 100%;
 }
 
-.selectionBar {
-    border-left: 5px solid rgba(148,176,207,255);
-    border-right: 5px solid rgba(108,161,185,255);
-    width: 10px;
-    height: 100%;
+#selectionBar {
+    border-left: 5px solid rgb(240, 179, 255);
+    border-right: 5px solid rgb(235, 153, 255);
+    width: 20px;
+    height: 100vh;
     position: absolute;
-    margin-left: 10%;
+    margin-left: 5vw;
     filter: blur(1px);
     display: block;
     animation: fadeinbar 0.5s;
+    transform: skew(-5deg);
 }
 
 @keyframes fadeinbar {
     from {
+        left: 2.5%;
         height: 0%;
     }
     to {
+        left: 0%;
         height: 100%;
     }
 }
 @-moz-keyframes fadeinbar { /* Firefox */
     from {
+        left: 2.5%;
         height: 0%;
     }
     to {
+        left: 0%;
         height: 100%;
     }
 }
 @-webkit-keyframes fadeinbar { /* Safari and Chrome */
     from {
+        left: 2.5%;
         height: 0%;
     }
     to {
+        left: 0%;
         height: 100%;
     }
 }
 @-o-keyframes fadeinbar { /* Opera */
     from {
+        left: 2.5%;
         height: 0%;
     }
     to {
+        left: 0%;
         height: 100%;
     }
 }
