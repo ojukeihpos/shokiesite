@@ -27,8 +27,6 @@ export default class Hardware extends React.Component<{}, {}> {
                         Fightstick: Qanba Obsidian (Korean lever, Sanwa buttons), Hori RAP 4 (JLF Link lever, Sanwa buttons)
                         <hr/>
                         VR: Oculus Quest 2
-                        <hr/>
-                        Plane: F-22A Raptor, F-15C Eagle
                         </p>
                     </div>
                 </div>

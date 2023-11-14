@@ -1,4 +1,4 @@
-ul {
+.list-group {
     margin: 0;
     padding: 0;
     position: absolute;
@@ -10,7 +10,7 @@ ul {
     transform: skew(-5deg);
 }
 
-li {
+.list-group-item {
     position: relative;
     list-style-type: none;
     padding-left: 2vw;
@@ -19,27 +19,27 @@ li {
     animation-fill-mode: forwards;
 }
 
-li:nth-child(5n+1) {
+.list-group-item:nth-child(5n+1) {
     -webkit-animation-delay: 0.1s;
     animation-delay: 0.1s;
 }
 
-li:nth-child(5n+2) {
+.list-group-item:nth-child(5n+2) {
     -webkit-animation-delay: 0.2s;
     animation-delay: 0.2s;
 }
 
-li:nth-child(5n+3) {
+.list-group-item:nth-child(5n+3) {
     -webkit-animation-delay: 0.3s;
     animation-delay: 0.3s;
 }
 
-li:nth-child(5n+4) {
+.list-group-item:nth-child(5n+4) {
     -webkit-animation-delay: 0.4s;
     animation-delay: 0.4s;
 }
 
-li:nth-child(5n+5) {
+.list-group-item:nth-child(5n+5) {
     -webkit-animation-delay: 0.5s;
     animation-delay: 0.5s;
 }

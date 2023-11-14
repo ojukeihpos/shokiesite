@@ -41,7 +41,6 @@ export default class App extends React.Component<{}, {}> {
       <Menu />
       <Routes>
         <Route path="/profile" element={<Profile />} />
-        <Route path="/socials" element={<Socials />} />
         <Route path="/hardware" element={<Hardware />} />
         <Route path="/" />
       </Routes>

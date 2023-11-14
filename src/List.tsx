@@ -46,11 +46,6 @@ export default class List extends React.Component<{}, {}> {
                 text: "SPECS",
                 page: "hardware"
             },
-            {
-                id: 2,
-                text: "SNS",
-                page: "socials"
-            },
         ],
         selected: 0,
         c: new Array<AnimationControls>(),
