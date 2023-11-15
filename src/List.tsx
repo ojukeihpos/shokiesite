@@ -38,13 +38,13 @@ export default class List extends React.Component<{}, {}> {
         menulist: [
             {
                 id: 0,
-                text: "PROFILE",
-                page: "profile"
+                text: "PROFESSIONAL",
+                page: "professional"
             },
             {
                 id: 1,
-                text: "SPECS",
-                page: "hardware"
+                text: "PERSONAL",
+                page: "personal"
             },
         ],
         selected: 0,
