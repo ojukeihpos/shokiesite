@@ -1,3 +1,9 @@
+#page-wrap {
+    height: 100%;
+    overflow: auto;
+    z-index: 1;
+}
+
 .professionalContent {
     padding-top: 2.5rem;
     text-align: left;
