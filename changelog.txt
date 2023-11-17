@@ -6,3 +6,9 @@ Nov. 15 2023
 Mobile stuff:
 - Added a bars icon to the top left
 - Threw in the content from "Professional" just to have an idea of sizing and scaling
+
+Nov. 16 2023:
+
+- Figured out how to add a working sidebar by using react-burger-menu (https://github.com/negomi/react-burger-menu)
+
+There's some limitations, so I'll have to experiment and see if I can prevent that. I also found out that w3.org has a "ARIA Authoring Practices Guide", so I should start adapting my website to follow those guidelines once I have some more features nailed down.
