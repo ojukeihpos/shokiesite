@@ -7,7 +7,7 @@ export default class Hardware extends React.Component<{}, {}> {
                 <div className='horizontal-line up'/>
                 <div className='horizontal-line down'/>
                 <div className='screen'>
-                    <div className='screen-header'><p>hardware<Link to="/"><img className='close-button clickable' src={require('./assets/images/exit.png')} alt=''/></Link></p></div>
+                    <div className='screen-header'><p>hardware<Link to="/"><img className='close-button clickable' src={require('../assets/images/exit.png')} alt=''/></Link></p></div>
                     <div className='screen-text'><p>CPU : Ryzen 5 3600X
                         <br/>
                         Motherboard: MSI MPG X570 GAMING PLUS

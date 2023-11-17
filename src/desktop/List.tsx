@@ -93,7 +93,6 @@ export default class List extends React.Component<{}, {}> {
                 {this.state.menulist.map(item => (
 
                     <li id={"shoka__" + item.id} key={item.id} className={this.state.selected === item.id ? "list-group-item selected" : "list-group-item"} onMouseEnter={(e) => {
-                        console.log(this.state.c[item.id])
                         this.state.c[item.id].restart()
                         this.highlightTextHandler(item.id)
                     }}>

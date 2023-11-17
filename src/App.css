@@ -1,5 +1,6 @@
 * {
   font-family: "DotGothic16";
+  src: local('DotGothic16'), url("./assets/fonts/DotGothic16-Regular.ttf") format("truetype");
   box-sizing: border-box;
 }
 

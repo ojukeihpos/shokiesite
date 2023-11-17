@@ -1,3 +1,8 @@
 Nov. 15 2023
 - Changed the list to "Professional" and "Personal". Personal currently has nothing in it, and Professional was changed to sound more, well, professional.
 - Added a User-Agent check to detect mobile users. Currently just shows "WIP", since nothing's there, but the desktop should work fine. Will be focusing on mobile for the time being going forward
+- Mobile check reference : https://goshacmd.com/different-mobile-desktop-tablet-layouts-react/
+
+Mobile stuff:
+- Added a bars icon to the top left
+- Threw in the content from "Professional" just to have an idea of sizing and scaling

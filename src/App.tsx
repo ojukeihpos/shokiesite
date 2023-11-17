@@ -1,13 +1,11 @@
 import React from 'react';
-import Background from './Background';
+import { Background as DesktopBackground } from './desktop/Background';
+import { MobileComponent } from './mobile/MobileComponent';
 import "@fontsource/dotgothic16";
 import './App.css';
-import Menu from './Menu';
-import Socials from './Socials';
-import Hardware from './Hardware';
-import Professional from './Professional';
+import Menu from './desktop/Menu';
+import Professional from './desktop/Professional';
 import { Route, Routes } from 'react-router-dom';
-import './screen.css'
 import Scramble from 'react-scramble';
 
 export default class App extends React.Component<{}, { width: number }> {
@@ -40,12 +38,10 @@ export default class App extends React.Component<{}, { width: number }> {
 
   public render() {
     const { width } = this.state;
-    const isMobile = width <= 500;
+    const isMobile = width <= 800;
     if (isMobile) {
       return <div className='App'>
-        <h1>
-          WIP
-        </h1>
+        <MobileComponent />
       </div>
     } else {
       return <div className="App">
@@ -67,11 +63,10 @@ export default class App extends React.Component<{}, { width: number }> {
           speed='fast' /></a></h1>
         <div id="shoka__frame" />
         <div className="shoka__forward-vents"></div>
-        <Background />
+        <DesktopBackground />
         <Menu />
         <Routes>
           <Route path="/professional" element={<Professional />} />
-          <Route path="/hardware" element={<Hardware />} />
           <Route path="/" />
         </Routes>
         <footer className="shoka__footer">

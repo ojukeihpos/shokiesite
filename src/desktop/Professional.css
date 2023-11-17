@@ -4,13 +4,14 @@
     box-sizing: border-box;
     position: absolute;
     width: 70%;
-    right: 5vw;
+    right: -70%;
     height: calc(100vh - 60px);
     background-color: white;
     border-left: 0.5vw solid #4d00f2;
     border-right: 0.5vw solid #4d00f2;
     padding: 0 1vw 0 1vw;
     overflow: auto;
+    animation: contentAppear 0.1s forwards;
 }
 
 #titlehead {
@@ -101,10 +102,27 @@ ul.profileNav li.active {
     #titlehead {
         padding: 1.5vw 10% 0 10%;
     }
+
+    .content {
+        width: 60%;
+    }
 }
 
-@media screen and (min-height: 1000px) {
+@media screen and (min-height: 1000px) and (max-width: 1000px) {
     #titlehead {
         padding: 10vw 10% 0 10%;
+    }
+    .content {
+        width: 55%;
+    }
+}
+
+@keyframes contentAppear {
+    from {
+        right: -70%;
+    }
+
+    to {
+        right: 0;
     }
 }
