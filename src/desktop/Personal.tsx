@@ -42,7 +42,7 @@ export default class Personal extends React.Component<{}> {
 */
 class MahjongList extends React.Component<{}, { players: [] }> {
     componentDidMount(): void {
-        axios.get(`http://localhost:7777/players`) // should return a json from the local mongoDB cluster
+        axios.get(``) // should return a json from the local mongoDB cluster
             .then(res => {
                 const players = res.data
                 this.setState({ players })
