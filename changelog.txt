@@ -1,3 +1,18 @@
+Nov. 22 2023:
+
+- Planning to test something with MongoDB/Express now that it has difficulties with create-react-app being deprecated, and also planning to test something with Discord OAuth
+- Managed to get something working. New ./backend/ folder contains everything that is associated with establishing connection to and reading from mongoDB, and Personal.tsx now has debug code that takes that data and maps it to a li (it's messy but it's just PoC)
+
+Nov. 17 2023:
+
+- Added a personal page and changed the css usage in Professional.tsx and Personal.tsx to use a shared Content.css file
+
+Nov. 16 2023:
+
+- Figured out how to add a working sidebar by using react-burger-menu (https://github.com/negomi/react-burger-menu)
+
+There's some limitations, so I'll have to experiment and see if I can prevent that. I also found out that w3.org has a "ARIA Authoring Practices Guide", so I should start adapting my website to follow those guidelines once I have some more features nailed down.
+
 Nov. 15 2023
 - Changed the list to "Professional" and "Personal". Personal currently has nothing in it, and Professional was changed to sound more, well, professional.
 - Added a User-Agent check to detect mobile users. Currently just shows "WIP", since nothing's there, but the desktop should work fine. Will be focusing on mobile for the time being going forward
@@ -7,8 +22,3 @@ Mobile stuff:
 - Added a bars icon to the top left
 - Threw in the content from "Professional" just to have an idea of sizing and scaling
 
-Nov. 16 2023:
-
-- Figured out how to add a working sidebar by using react-burger-menu (https://github.com/negomi/react-burger-menu)
-
-There's some limitations, so I'll have to experiment and see if I can prevent that. I also found out that w3.org has a "ARIA Authoring Practices Guide", so I should start adapting my website to follow those guidelines once I have some more features nailed down.
