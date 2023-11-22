@@ -7,6 +7,7 @@ import Menu from './desktop/Menu';
 import Professional from './desktop/Professional';
 import { Route, Routes } from 'react-router-dom';
 import Scramble from 'react-scramble';
+import Personal from './desktop/Personal';
 
 export default class App extends React.Component<{}, { width: number }> {
   /* for personal colour scheming:
@@ -66,8 +67,9 @@ export default class App extends React.Component<{}, { width: number }> {
         <DesktopBackground />
         <Menu />
         <Routes>
-          <Route path="/professional" element={<Professional />} />
           <Route path="/" />
+          <Route path="/professional" element={<Professional />} />
+          <Route path="/personal" element={<Personal />} />
         </Routes>
         <footer className="shoka__footer">
           <img alt='' className='parts straight_vents' src={require('./assets/borders/parts_04.svg').default}></img>

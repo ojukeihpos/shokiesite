@@ -1,7 +1,5 @@
 import React from 'react';
-import './Professional.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faSpotify, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import './Content.css';
 
 export default class Professional extends React.Component<{}, {}> {
 
@@ -23,9 +21,9 @@ export default class Professional extends React.Component<{}, {}> {
                         「Sophie」
                     </div>
                     <div className='socials__bar'>
-                        <a href="https://github.com/ojukeihpos"><FontAwesomeIcon icon={faGithub} size={'2x'} /></a>
-                        <a href="https://open.spotify.com/user/3tzf9mdztpmaxarb6mh5co7az?si=d6f8e31224314e28"><FontAwesomeIcon icon={faSpotify} size={'2x'} /></a>
-                        <a href="https://www.instagram.com/shokastarlight/"><FontAwesomeIcon icon={faInstagram} size={'2x'} /></a>
+                        <a className='link' href="https://github.com/ojukeihpos">github</a>
+                        |
+                        <a className='link' href="mailto:sophie@shokie.xyz">sophie@shokie.xyz</a>
                     </div>
                     <hr className='profilehr' />
                 </div>
