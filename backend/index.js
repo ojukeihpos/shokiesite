@@ -1,7 +1,8 @@
-const dbName = 'high-rollers'
-const PORT = 7777
+require('dotenv').config()
+const dbName = process.env.dbName
+const PORT = process.env.PORT
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/', {
+mongoose.connect(`mongodb://${process.env.dbUrl}:27017/`, {
     dbName: dbName,
 });
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import './Content.css';
 
 export default class Personal extends React.Component<{}> {
@@ -30,30 +29,8 @@ export default class Personal extends React.Component<{}> {
                         <li>Maid (Final Fantasy XIV)</li>
                     </ul>
                     <br />
-                    <MahjongList />
                 </div>
             </div>
-        </div>
-    }
-}
-/* Test class for getting MJS IDs from the secret discord. Format:
-    name : String
-    id : Number
-*/
-class MahjongList extends React.Component<{}, { players: [] }> {
-    componentDidMount(): void {
-        axios.get(``) // should return a json from the local mongoDB cluster
-            .then(res => {
-                const players = res.data
-                this.setState({ players })
-            })
-            .catch(() => this.setState({ players: [] }))
-    }
-    render() {
-        return <div>
-            {this.state ? this.state.players.map((player: { name: String, id: Number }) => { // is there a way to not have to check for null state? It probably has something to do with the timing of componentDidMount, but it's not like react has a lateUpdate like libGDX
-                return <li>{player.name} : {player.id}</li>
-            }) : null}
         </div>
     }
 }

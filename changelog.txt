@@ -3,6 +3,7 @@ Nov. 22 2023:
 - Planning to test something with MongoDB/Express now that it has difficulties with create-react-app being deprecated, and also planning to test something with Discord OAuth
 - Managed to get something working. New ./backend/ folder contains everything that is associated with establishing connection to and reading from mongoDB, and Personal.tsx now has debug code that takes that data and maps it to a li (it's messy but it's just PoC)
 - Also changed a bunch of stuff in package.json and config-overrides to include polyfill because create-react-app deprecating was a great choice and it definitely did not cause problems
+- Accidentally pushed something to live that accesses localhost. Oops
 
 Nov. 17 2023:
 
