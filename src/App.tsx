@@ -9,7 +9,10 @@ import { Route, Routes } from 'react-router-dom';
 import Scramble from 'react-scramble';
 import Personal from './desktop/Personal';
 import Mahjong from './desktop/Mahjong';
+import Cookies from 'js-cookie';
+import axios from 'axios';
 
+const DISCORD_API = 'http://discord.com/api/v10';
 
 export default class App extends React.Component<{}, { width: number }> {
   /* for personal colour scheming:
@@ -50,7 +53,7 @@ export default class App extends React.Component<{}, { width: number }> {
       return <div className="App">
         <Routes>
 
-          <Route path="/*" element={<div>
+          <Route path="/" element={<div>
             <h1 id="shoka__name"><a href="/"><Scramble
               autoStart
               text={"shoka"}
@@ -82,6 +85,12 @@ export default class App extends React.Component<{}, { width: number }> {
           }>
           </Route>
           <Route path="/mahjong" element={<Mahjong />} />
+          <Route path="/mahjong/players" element={
+            <div>
+              
+              <img src={`${Cookies.get("avatar")}`} />
+            </div>
+          } />
         </Routes>
       </div>
     }
