@@ -10,8 +10,6 @@ import Scramble from 'react-scramble';
 import Personal from './desktop/Personal';
 import Mahjong from './desktop/Mahjong';
 import Cookies from 'js-cookie';
-import axios from 'axios';
-
 const DISCORD_API = 'http://discord.com/api/v10';
 
 export default class App extends React.Component<{}, { width: number }> {
@@ -45,54 +43,42 @@ export default class App extends React.Component<{}, { width: number }> {
   public render() {
     const { width } = this.state;
     const isMobile = width <= 800;
-    if (isMobile) {
-      return <div className='App'>
-        <MobileComponent />
-      </div>
-    } else {
-      return <div className="App">
-        <Routes>
 
-          <Route path="/" element={<div>
-            <h1 id="shoka__name"><a href="/"><Scramble
-              autoStart
-              text={"shoka"}
-              steps={[
-                {
-                  roll: 5,
-                  action: '+',
-                  type: 'all',
-                },
-                {
-                  action: '-',
-                  type: 'forward',
-                },
-              ]}
-              mouseEnterTrigger='restart'
-              speed='fast' /></a></h1>
-            <div id="shoka__frame" />
-            <div className="shoka__forward-vents"></div>
-            <DesktopBackground />
-            <Menu />
-            <Routes>
-              <Route path="/professional" element={<Professional />} />
-              <Route path="/personal" element={<Personal />} />
-            </Routes>
-            <footer className="shoka__footer">
-              <img alt='' className='parts straight_vents' src={require('./assets/borders/parts_04.svg').default}></img>
-            </footer>
-          </div>
-          }>
-          </Route>
-          <Route path="/mahjong" element={<Mahjong />} />
-          <Route path="/mahjong/players" element={
-            <div>
-              
-              <img src={`${Cookies.get("avatar")}`} />
-            </div>
-          } />
-        </Routes>
-      </div>
-    }
+    return <div className="App">
+      {isMobile ? <MobileComponent /> :
+        <div>
+          <h1 id="shoka__name"><a href="/"><Scramble
+            autoStart
+            text={"shoka"}
+            steps={[
+              {
+                roll: 5,
+                action: '+',
+                type: 'all',
+              },
+              {
+                action: '-',
+                type: 'forward',
+              },
+            ]}
+            mouseEnterTrigger='restart'
+            speed='fast' /></a></h1>
+          <div id="shoka__frame" />
+          <div className="shoka__forward-vents"></div>
+          <DesktopBackground />
+          <Menu />
+
+          <Routes>
+            <Route path="/professional" element={<Professional />} />
+            <Route path="/personal" element={<Personal />} />
+          </Routes>
+
+          <footer className="shoka__footer">
+            <img alt='' className='parts straight_vents' src={require('./assets/borders/parts_04.svg').default}></img>
+          </footer>
+
+        </div>
+      }
+    </div>
   }
 }

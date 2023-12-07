@@ -1,3 +1,9 @@
+Nov. 29 2023:
+
+- Set up Passportjs for Discord OAuth2 implementation. Allows for log in and should checks if you're in a specific server to give you access to a list, however the process is very cursed and currently barely works
+- Need to figure out how to store Discord user information in some secure method. Currently using cookies, but storing accessToken in a cookie doesn't inspire confidence
+- Maybe should look into using a cookie to store a sessionID, I'll ask some friends and get some opinions
+
 Nov. 22 2023:
 
 - Planning to test something with MongoDB/Express now that it has difficulties with create-react-app being deprecated, and also planning to test something with Discord OAuth
