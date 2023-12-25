@@ -45,39 +45,35 @@ export default class App extends React.Component<{}, { width: number }> {
     const isMobile = width <= 800;
 
     return <div className="App">
-      {isMobile ? <MobileComponent /> :
-        <div>
-          <h1 id="shoka__name"><a href="/"><Scramble
-            autoStart
-            text={"shoka"}
-            steps={[
-              {
-                roll: 5,
-                action: '+',
-                type: 'all',
-              },
-              {
-                action: '-',
-                type: 'forward',
-              },
-            ]}
-            mouseEnterTrigger='restart'
-            speed='fast' /></a></h1>
-          <div id="shoka__frame" />
-          <div className="shoka__forward-vents"></div>
-          <DesktopBackground />
-          <Menu />
-
-          <Routes>
-            <Route path="/professional" element={<Professional />} />
-            <Route path="/personal" element={<Personal />} />
-          </Routes>
-
-          <footer className="shoka__footer">
-            <img alt='' className='parts straight_vents' src={require('./assets/borders/parts_04.svg').default}></img>
-          </footer>
-
-        </div>
+      {isMobile ? <MobileComponent /> : <div>
+        <h1 id="shoka__name"><a href="/"><Scramble
+          autoStart
+          text={"shoka"}
+          steps={[
+            {
+              roll: 5,
+              action: '+',
+              type: 'all',
+            },
+            {
+              action: '-',
+              type: 'forward',
+            },
+          ]}
+          mouseEnterTrigger='restart'
+          speed='fast' /></a></h1>
+        <div id="shoka__frame" />
+        <div className="shoka__forward-vents"></div>
+        <DesktopBackground />
+        <Menu />
+        <Routes>
+          <Route path="/professional" element={<Professional />} />
+          <Route path="/personal" element={<Personal />} />
+        </Routes>
+        <footer className="shoka__footer">
+          <img alt='' className='parts straight_vents' src={require('./assets/borders/parts_04.svg').default}></img>
+        </footer>
+      </div>
       }
     </div>
   }

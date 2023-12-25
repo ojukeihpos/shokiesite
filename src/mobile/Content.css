@@ -5,8 +5,50 @@
 }
 
 .professionalContent {
-    padding-top: 2.5rem;
+    position: relative;
+    padding-top: 2.5em;
     text-align: left;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+/*
+top left
+top right
+bottom right
+bottom left
+
+background-color: rgb(107, 107, 180);
+*/
+
+section:nth-child(2n + 3):not(:first-of-type) {
+    position: relative;
+    padding: 3em;
+    width: 100%;
+    z-index: 0;
+    background-color: #fafad2e0;
+}
+
+section p {
+    color: black;
+    z-index: 2;
+}
+
+section:nth-child(even) {
+    position: relative;
+    padding: 3em;
+    width: 100vw;
+    z-index: 0;
+    background-color: #9e7676ee;
+    overflow: hidden;
+}
+
+@media screen and (min-height: 1000px) and (max-width: 1000px) {
+    #titlehead {
+        padding: 10vw 10% 1em 10%;
+        background-color: #00ffff95;
+    }
+    .content {
+        width: 55%;
+    }
 }

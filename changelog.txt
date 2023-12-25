@@ -1,3 +1,7 @@
+Dec. 07 2023:
+
+- I didn't think about how nesting Routes would work and it turns out it causes problems (namely that some Route objects just stop being recognized if they're past the first layer)
+
 Nov. 29 2023:
 
 - Set up Passportjs for Discord OAuth2 implementation. Allows for log in and should checks if you're in a specific server to give you access to a list, however the process is very cursed and currently barely works

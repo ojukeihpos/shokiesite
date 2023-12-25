@@ -63,12 +63,16 @@
   .bm-menu-wrap {
     position: fixed;
     height: 100%;
+    border-color: red;
+    border-width: 20px;
   }
   
   /* General sidebar styles */
   .bm-menu {
     background: #373a47;
-    padding: 2.5em 1.5em 0;
+    border-top-right-radius: 5%;
+    border-bottom-right-radius: 5%;
+    padding: 1em 1.5em 0;
     font-size: 1.15em;
   }
   
@@ -85,10 +89,14 @@
   
   /* Individual item */
   .bm-item {
-    display: inline-block;
+    display: flex;
   }
   
   /* Styling of overlay */
   .bm-overlay {
     background: rgba(0, 0, 0, 0.3);
+  }
+
+  .sidebar-tab {
+    text-decoration: underline;
   }

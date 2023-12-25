@@ -15,7 +15,7 @@ export default class Personal extends React.Component<{}> {
                 </div>
                 <hr className='profilehr' />
                 <div className='about'>
-                    <p>Hello! I'm Shoka. My pronouns are she/her.</p>
+                    <p>Hello! I'm Sophie. My pronouns are she/her.</p>
                     <br />
                     <p>I identify as LGBTQ+. I was co-president of Laurier Pride Society at Wilfrid Laurier University, and was one of the founding members.</p>
                     <br />
