@@ -17,6 +17,7 @@
     opacity: 0%;
     animation: fadeintext 1s;
     animation-fill-mode: forwards;
+    font-family: "DotGothic16"
 }
 
 .list-group-item:nth-child(5n+1) {

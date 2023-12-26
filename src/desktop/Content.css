@@ -98,13 +98,14 @@ ul.profileNav li.active {
     background: #39A2DB;
 }
 
-@media screen and (max-height: 1000px) {
+@media screen and (min-height: 1000px) and (max-width: 1000px) {
     #titlehead {
-        padding: 1.5vw 10% 1.5em 10%;
+        padding: 10vw 10% 1em 10%;
+        background-color: #00ffff95;
     }
 
     .content {
-        width: 60%;
+        width: 55%;
     }
 }
 

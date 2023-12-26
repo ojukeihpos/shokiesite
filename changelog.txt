@@ -1,3 +1,13 @@
+Dec. 25 2023: 
+
+Merry Christmas!
+
+- Used browserstack.com to check site speed and studied a bit of mobile-first design. Main complain was the font being render-blocking, and still some optimizations left to do afterwards.
+
+Dec. 24 2023:
+
+- Messed with the mobile site design a bit. Changed how the content displays and the sidebar now has (placeholder) items and looks a little more polished overall.
+
 Dec. 07 2023:
 
 - I didn't think about how nesting Routes would work and it turns out it causes problems (namely that some Route objects just stop being recognized if they're past the first layer)

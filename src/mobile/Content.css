@@ -43,12 +43,13 @@ section:nth-child(even) {
     overflow: hidden;
 }
 
-@media screen and (min-height: 1000px) and (max-width: 1000px) {
+@media screen and (max-height: 1000px) {
     #titlehead {
-        padding: 10vw 10% 1em 10%;
-        background-color: #00ffff95;
+        padding: 1em 10% 1.5em 10%;
+        background-color: rgba(173, 216, 230, 0.80);
     }
+
     .content {
-        width: 55%;
+        width: 60%;
     }
 }
