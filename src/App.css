@@ -2,12 +2,6 @@
   box-sizing: border-box;
 }
 
-@font-face {
-  font-family: 'DotGothic16';
-  font-display: optional;
-  src: local('DotGothic16'), url("./assets/fonts/DotGothic16-Regular.ttf") format("truetype");
-}
-
 .App {
   text-align: center;
   height: 100%;
@@ -30,7 +24,7 @@ p {
   font-size: 2.5rem;
   color: white;
   transform: skew(-5deg);
-  font-family: "DotGothic16"
+  font-family: "DotGothic16";
 }
 
 #shoka__name:hover {

@@ -1,12 +1,13 @@
 import React from 'react';
-import './Content.css';
+import './Professional.css';
 
-export class Content extends React.Component<{}> {
+export class Professional extends React.Component<{}> {
     render() {
         return <div id="page-wrap">
-            <div className='professionalContent'>
+            <div className='professional-content'>
                 <div id='titlehead'>
-                    「Sophie」
+                    「Professional Info」
+                    <hr />
                 </div>
                 <section>
                     <p>Hello! I'm Sophie, a software developer.</p>
@@ -30,6 +31,10 @@ export class Content extends React.Component<{}> {
                     <p>I also was on the founding team for a new hackathon, StartHacks, at Wilfrid Laurier University alongside the members of 「Computer Science, Physics, and Mathematics Club」 (PHI) at Laurier, now known as 「Laurier Computing Society」 (LCS). The hackathon set the groundwork for Laurier's future hackathons and allowed for future classes to understand the obstacles associated with running a large scale event.</p>
                     <p>I am also a contributor to open-source projects, such as <a className="link" href="https://github.com/DefinitelyTyped/DefinitelyTyped">DefinitelyTyped</a>. I added typings to <a className="link" href="https://github.com/cettoana/react-scramble">react-scramble</a>. It's currently not on the mobile version of my website, but you can see it on desktop!</p>
                 </section>
+                <footer>
+                    <section>
+                    </section>
+                </footer>
             </div>
         </div>
     }

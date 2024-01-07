@@ -1,12 +1,13 @@
 #outer-container {
     height: 100%;
+    font-family: 'Source Sans 3';
 }
 
 .shoka__header.mobile {
     position: fixed;
     top: 0;
     height: 2.5rem;
-    background-color: #4d00f2;
+    background-color: #262e53;
     width: 100%;
     display: flex;
     padding-left: 10px;
@@ -31,7 +32,7 @@
     position: fixed;
     width: 24px;
     height: 20px;
-    left: 10px;
+    right: 10px;
     top: 10px;
   }
   
@@ -69,11 +70,12 @@
   
   /* General sidebar styles */
   .bm-menu {
-    background: #373a47;
-    border-top-right-radius: 5%;
-    border-bottom-right-radius: 5%;
+    background: #262e53;
+    border-top-left-radius: 5%;
+    border-bottom-left-radius: 5%;
     padding: 1em 1.5em 0;
     font-size: 1.15em;
+    font-family: 'DotGothic16';
   }
   
   /* Morph shape necessary with bubble or elastic */

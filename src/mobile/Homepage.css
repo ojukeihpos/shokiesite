@@ -1,0 +1,35 @@
+#homepage-container {
+    width: inherit;
+    height: calc(100vh - 2.5rem);
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-top: 2.5em;
+    text-align: left;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+#homepage-container>header {
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-family: 'Source Sans 3';
+    font-weight: bolder;
+    padding: 0 2.5em 0 2.5em;
+}
+
+nav>a.link {
+    color: white;
+    text-decoration: underline;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+footer {
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    color: white;
+    font-family: 'Source Sans 3';
+}

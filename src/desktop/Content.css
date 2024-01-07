@@ -12,22 +12,11 @@
     padding: 0 1vw 0 1vw;
     overflow: auto;
     animation: contentAppear 0.1s forwards;
+    font-family: "Source Sans 3";
 }
 
-#titlehead {
-    position: relative;
-    vertical-align: middle;
+.socials__bar {
     text-align: center;
-    font-size: 3.2rem;
-    color: black;
-}
-
-.about {
-    text-align: left;
-    padding-left: 2vw;
-    padding-right: 2vw;
-    overflow: none;
-    height: auto;
 }
 
 hr.profilehr {
@@ -102,10 +91,23 @@ ul.profileNav li.active {
     #titlehead {
         padding: 10vw 10% 1em 10%;
         background-color: #00ffff95;
+        position: relative;
+        vertical-align: middle;
+        text-align: center;
+        font-size: 3.2rem;
+        color: black;
     }
 
     .content {
         width: 55%;
+    }
+
+    .about {
+        text-align: left;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        overflow: none;
+        height: auto;
     }
 }
 

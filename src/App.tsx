@@ -45,6 +45,8 @@ export default class App extends React.Component<{}, { width: number }> {
     const isMobile = width <= 800;
 
     return <div className="App">
+      <link href='https://fonts.gstatic.com' rel='preconnect' />
+      <link href='https://fonts.googleapis.com/css?family=Source Sans 3' rel='stylesheet' />
       {isMobile ? <MobileComponent /> : <div>
         <h1 id="shoka__name"><a href="/"><Scramble
           autoStart

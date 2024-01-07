@@ -1,0 +1,70 @@
+#page-wrap {
+    height: 100%;
+    overflow: auto;
+    z-index: 1;
+}
+
+.professional-content {
+    position: relative;
+    padding-top: 2.5em;
+    text-align: left;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.personal-content {
+    position: relative;
+    padding-top: 2.5em;
+    text-align: left;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+/*
+top left
+top right
+bottom right
+bottom left
+
+background-color: rgb(107, 107, 180);
+*/
+
+section {
+    position: relative;
+    padding: 3em;
+    width: 100vw;
+    z-index: 0;
+    overflow: hidden;
+}
+
+section p {
+    color: black;
+    z-index: 2;
+}
+
+@media screen and (max-height: 1000px) {
+    #titlehead {
+        top: 2.5rem;
+        padding: 1em 10% 0 10%;
+        vertical-align: middle;
+        text-align: center;
+        font-size: 2rem;
+        color: black;
+    }
+
+    .content {
+        width: 60%;
+    }
+}
+
+footer {
+    position: absolute;
+    z-index: 0;
+}
+
+footer>section {
+    position: relative;
+    padding: 3em;
+    width: 100vw;
+    z-index: 0;
+}
