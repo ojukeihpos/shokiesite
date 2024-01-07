@@ -1,3 +1,8 @@
+Jan. 7 2024:
+
+- No longer loading fonts locally since the googlefonts CDN can fix the problem of the loading being renderblocking
+- Big overhaul of the mobile part of the site, needs work but it's much cleaner now
+
 Dec. 25 2023: 
 
 Merry Christmas!
