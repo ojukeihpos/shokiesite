@@ -71,8 +71,6 @@
   /* General sidebar styles */
   .bm-menu {
     background: #262e53;
-    border-top-left-radius: 5%;
-    border-bottom-left-radius: 5%;
     padding: 1em 1.5em 0;
     font-size: 1.15em;
     font-family: 'DotGothic16';
@@ -80,7 +78,7 @@
   
   /* Morph shape necessary with bubble or elastic */
   .bm-morph-shape {
-    fill: #373a47;
+    fill: #262e53;
   }
   
   /* Wrapper for item list */

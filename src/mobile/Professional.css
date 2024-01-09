@@ -7,7 +7,7 @@
 .professional-content {
     position: relative;
     padding-top: 2.5em;
-    text-align: left;
+    text-align: justify;
     word-wrap: break-word;
     white-space: pre-wrap;
 }
@@ -31,7 +31,9 @@ background-color: rgb(107, 107, 180);
 
 section {
     position: relative;
-    padding: 3em;
+    padding-left: 3em;
+    padding-right: 3em;
+    padding-bottom: 1em;
     width: 100vw;
     z-index: 0;
     overflow: hidden;
@@ -40,6 +42,10 @@ section {
 section p {
     color: black;
     z-index: 2;
+}
+
+.section-header {
+    text-align: center;
 }
 
 @media screen and (max-height: 1000px) {

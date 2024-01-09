@@ -1,8 +1,8 @@
 import React from 'react'
 import './Header.css'
 
-import { stack as Slide } from 'react-burger-menu';
-import { Link, Route, Routes } from 'react-router-dom';
+import { elastic as Slide } from 'react-burger-menu';
+import { Link } from 'react-router-dom';
 
 export class Header extends React.Component<{}, { isOpen: boolean }> {
     constructor() {

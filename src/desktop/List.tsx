@@ -92,11 +92,8 @@ export default class List extends React.Component<{}, {}> {
                 <div id="cursor" />
                 <div id="highlight" />
             </div>
-
-
             <ul className="list-group">
                 {this.state.menulist.map(item => (
-
                     <li id={"shoka__" + item.id} key={item.id} className={this.state.selected === item.id ? "list-group-item selected" : "list-group-item"} onMouseEnter={(e) => {
                         this.state.c[item.id].restart()
                         this.highlightTextHandler(item.id)
