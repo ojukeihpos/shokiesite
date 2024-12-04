@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import { Background as DesktopBackground } from "./Background";
-import { M_PLUS_1 } from "next/font/google";
 import "./globals.css";
 import { Title } from "./Title";
 import dynamic from "next/dynamic";
 import Image from "next/image";
+import Header from "./header";
+import localFont from 'next/font/local'
+
+const acesFont = localFont({ src: './ACES07_Regular.otf' })
 
 const List = dynamic(() => import('./List'))
-const mplus1 = M_PLUS_1({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Shoka's Hub",
@@ -20,17 +22,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
-      </head>
-      <body className={mplus1.className}>
+    <html lang="en" className={acesFont.className + " text-[18px]"}>
+      <body>
 
         {/* Mobile */}
 
         <div id="mobile-component" className="lg:hidden">
+          <Header />
           {children}
         </div>
 

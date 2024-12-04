@@ -12,12 +12,14 @@
     "next": "^14.2.18",
     "node-fetch": "^3.3.2",
     "react": "^18",
+    "react-burger-menu": "^3.1.0",
     "react-dom": "^18",
     "use-scramble": "^2.2.15"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
+    "@types/react-burger-menu": "^2.8.7",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
