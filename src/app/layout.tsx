@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import Header from "./header";
 import localFont from 'next/font/local'
+import Link from "next/link";
 
 const acesFont = localFont({ src: './ACES07_Regular.otf' })
 
@@ -23,6 +24,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={acesFont.className + " text-[18px]"}>
+      <head>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/bluesky-profile-feed-embed@^1.0.0/+esm" async></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bluesky-profile-feed-embed@^1.0.0/dist/core.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bluesky-profile-feed-embed@^1.0.0/themes/light.min.css" media="(prefers-color-scheme: light)" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bluesky-profile-feed-embed@^1.0.0/themes/dim.min.css" media="(prefers-color-scheme: dark)" />
+      </head>
       <body>
 
         {/* Mobile */}
@@ -38,9 +45,9 @@ export default function RootLayout({
         <div id="desktop-component" className="hidden lg:inline">
           <DesktopBackground />
           <div id="shoka__name">
-            <a href="/">
+            <Link prefetch href="/">
               <Title text='Shoka' />
-            </a>
+            </Link>
           </div>
           <div id="shoka__frame" />
           <div className="shoka__forward-vents" />
