@@ -18,8 +18,8 @@ const pageContent = <><div className='shoka__header'>
         </p>
         <div className='content-segment py-[1rem]'>
             <div className=''>
-                <span className='text-xl dark:text-gray underline flex justify-between'>
-                    <p>Freelance Web Developer</p> <p> 03/2023 - Present</p>
+                <span className='dark:text-gray underline sm:flex sm:justify-between'>
+                    <p className='text-xl'>Freelance Web Developer</p> <p className='sm:text-xl'> 03/2023 - Present</p>
                 </span>
                 <p>Online</p>
                 <div className='border-l-4 border-blue-400 pl-4 my-2'>Skills: Next.js, TypeScript, Node.js, Amazon Web Services (AWS), Git, Figma</div>
@@ -36,8 +36,8 @@ const pageContent = <><div className='shoka__header'>
 
         <div className='content-segment py-[1rem]'>
             <div className=''>
-                <span className='text-xl dark:text-gray underline flex justify-between'>
-                    <p>Technical Consultant</p> <p>02/2022 - 01/2023, 12/2023 - 01/2025</p>
+                <span className='dark:text-gray underline sm:flex sm:justify-between'>
+                    <p className='text-xl'>Technical Consultant</p> <p className='sm:text-xl'>02/2022 - 01/2025</p>
                 </span>
                 <p>Gaijin Goombah LLC</p>
                 <div className='border-l-4 border-blue-400 pl-4 my-2'>Skills: Cloud Storage, System Design, Computer Hardware</div>
@@ -49,8 +49,8 @@ const pageContent = <><div className='shoka__header'>
         </div>
         <div className='content-segment py-[1rem]'>
             <div className=''>
-                <span className='text-xl dark:text-gray underline flex justify-between'>
-                    <p>Full-Stack Developer</p> <p> 03/2019 - 02/2020</p>
+                <span className='dark:text-gray underline sm:flex sm:justify-between'>
+                    <p className='text-xl'>Full-Stack Developer</p> <p className='sm:text-xl'> 03/2019 - 02/2020</p>
                 </span>
                 <p>Wilfrid Laurier University</p>
                 <div className='border-l-4 border-blue-400 pl-4 my-2'>Skills: React, TypeScript, Node.js, Express, MongoDB, Java, Git, AWS</div>
@@ -69,11 +69,11 @@ const pageContent = <><div className='shoka__header'>
             </div>
         </div>
         <p className='profilehr text-4xl dark:text-white underline text-center'>Other</p>
-        <p className='border-l-4 border-black dark:border-[#dad2c7] pl-4 my-2'>- Helped found a new hackathon, <span className='italic'>StartHacks</span>, at Wilfrid Laurier University alongside the members of 「Computer Science, Physics, and Mathematics Club」 (PHI) at Laurier, now known as 「Laurier Computing Society」 (LCS). The hackathon set the groundwork for Laurier's future hackathons and allowed for future staff to understand the obstacles associated with running a large scale event</p>
-        <p className='border-l-4 border-black dark:border-[#dad2c7] pl-4 my-2'>- Founded and acted as Co-President for <span className='italic'>Laurier Pride Society</span>, a group primarily focused on spreading awareness and providing a safe space for queer students</p>
-        <p className='border-l-4 border-black dark:border-[#dad2c7] pl-4 my-2'>- Served as an accountant for the <span className='italic'>University of Waterloo Fighting Games Club</span>, keeping track of inventory and assisting with other executive functions</p>
-        <p className='border-l-4 border-black dark:border-[#dad2c7] pl-4 my-2'>- Attended hackathons (<a className='link' href='https://devpost.com/captainkesty'>devpost</a>), notably earning a Best Pitch award at <a className="link" href="https://devpost.com/software/healthsimple">{"<Br/eak>Inequality"}</a> for a low-spec app providing medical resources in areas of low access. Users could input symptoms and be given appropriate medical information in a simple and traditionally understood method (SMS or search engine)</p>
-        <p className='border-l-4 border-black dark:border-[#dad2c7] pl-4 my-2'>- Contributed to open-source projects, such as <a className="link" href="https://github.com/DefinitelyTyped/DefinitelyTyped">DefinitelyTyped</a> by adding typings to <a className="link" href="https://github.com/cettoana/react-scramble">react-scramble</a>. Can be seen in action by hovering over (if on desktop) the name on the top left of this page</p>
+        <p className='border-l-4 border-black dark:border-[#dad2c7] pl-4 my-2'>- <span className='italic'>Wilfrid Laurier University - StartHacks</span> Founding Member, a university-based hackathon</p>
+        <p className='border-l-4 border-black dark:border-[#dad2c7] pl-4 my-2'>- <span className='italic'>Laurier Pride Society</span> Co-President and Founding Member, a group primarily focused on spreading awareness and providing a safe space for queer students</p>
+        <p className='border-l-4 border-black dark:border-[#dad2c7] pl-4 my-2'>- <span className='italic'>University of Waterloo Fighting Games Club</span> Accountant</p>
+        <p className='border-l-4 border-black dark:border-[#dad2c7] pl-4 my-2'>- Best Pitch winner at <a className="link" href="https://devpost.com/software/healthsimple">{"<Br/eak>Inequality"}</a> (<a className='link' href='https://devpost.com/captainkesty'>devpost</a>) with a low-spec app providing medical resources in areas of low access. Users could input symptoms and be given appropriate medical information in a simple and traditionally understood method (SMS or search engine)</p>
+        <p className='border-l-4 border-black dark:border-[#dad2c7] pl-4 my-2'>- Open-source contributor to <a className="link" href="https://github.com/DefinitelyTyped/DefinitelyTyped">DefinitelyTyped</a> by adding typings to <a className="link" href="https://github.com/cettoana/react-scramble">react-scramble</a>. Can be seen in action by hovering over (if on desktop) the name on the top left of this page</p>
     </div></>
 
 export default function Professional() {

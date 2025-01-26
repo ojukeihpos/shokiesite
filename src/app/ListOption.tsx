@@ -12,11 +12,9 @@ interface Props {
 }
 
 export const ListOption = (props: Props) => {
-    return <li id={"shoka__" + props.item.id} key={props.item.id} className={"list-group-item clickable"}>
-        <Link prefetch href={'/' + props.item.page} className='text-2xl'>
-            {props.item.text}
-        </Link>
-    </li>
+    return <Link id={"shoka__" + props.item.id} key={props.item.id} prefetch href={'/' + props.item.page} className='text-2xl list-group-item clickable'>
+        {props.item.text}
+    </Link>
 }
 
 /*<li id={"shoka__" + item.id} key={item.id} className={this.state.selected === item.id ? "list-group-item selected" : "list-group-item"} onMouseEnter={() => this.highlightTextHandler(item.id)}>
