@@ -18,7 +18,7 @@ export const Header = () => {
             <Link href={"/personal"} onClick={() => setIsOpen(false)} className='sidebar-tab clickable'>Personal</Link>
             <hr />
         </Slide>
-        <div className='shoka__header py-2 mobile bg-[#262e53] border-b-4 border-[#EF22F550] dark:border-[#868583]'>
+        <div className='shoka__header mobile bg-[#262e53] border-b-4 border-[#EF22F550] dark:border-[#868583]'>
             <Title />
         </div>
     </div >
