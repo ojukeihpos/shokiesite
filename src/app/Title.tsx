@@ -1,15 +1,32 @@
 "use client"
-import React from 'react';
+import Link from 'next/link';
+import React, { useState } from 'react';
 import { useScramble } from 'use-scramble';
 
-export const Title = (props: { text: string }) => {
+const TITLES = [
+    "Sophie", "Shoka", "shokie"
+]
+
+let currTitle = 0
+
+export const Title = () => {
+
+    const [title, setTitle] = useState(TITLES[currTitle])
+
+    function incrementTitle() {
+        currTitle = (currTitle + 1) % TITLES.length
+        setTitle(TITLES[currTitle])
+    }
+
     const { ref, replay } = useScramble({
-        text: props.text,
+        text: title,
         speed: 0.6,
         tick: 1,
         step: 1,
         scramble: 4,
         seed: 0,
     })
-    return <div ref={ref} onMouseOverCapture={replay} className='w-fit clickable' />
+    return <Link prefetch href="/" onTouchStartCapture={() => incrementTitle()} onMouseOverCapture={() => incrementTitle()}>
+        <div ref={ref} onMouseOverCapture={replay} className='clickable sm:text-2xl' />
+    </Link>
 }

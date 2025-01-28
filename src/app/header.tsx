@@ -1,24 +1,25 @@
 'use client'
 import Link from 'next/link';
 import { slide as Slide } from 'react-burger-menu';
+import { Title } from './Title';
+import { useState } from 'react';
 let isOpen = false
 
-export default function Header() {
+export const Header = () => {
+
+    const [isOpen, setIsOpen] = useState(false)
+
     return <div>
-        <Slide pageWrapId={'page-wrap'} outerContainerId={'outer-container'} right isOpen={isOpen} onStateChange={(state) => isOpen = state.isOpen}>
-            <h2>Hello!</h2>
+        <Slide pageWrapId={'page-wrap'} outerContainerId={'outer-container'} right isOpen={isOpen} onStateChange={(state) => setIsOpen(state.isOpen)}>
+            <Link href={"/"} onClick={() => setIsOpen(false)} className='sidebar-tab clickable'>Home</Link>
             <hr />
-            <Link href={"/"} onClick={() => hideSidebar()} className='sidebar-tab clickable'>Home</Link>
+            <Link href={"/professional"} onClick={() => setIsOpen(false)} className='sidebar-tab clickable'>Professional</Link>
             <hr />
-            <Link href={"/professional"} onClick={() => hideSidebar()} className='sidebar-tab clickable'>Professional</Link>
-            <hr />
-            <Link href={"/personal"} onClick={() => hideSidebar()} className='sidebar-tab clickable'>Personal</Link>
+            <Link href={"/personal"} onClick={() => setIsOpen(false)} className='sidebar-tab clickable'>Personal</Link>
             <hr />
         </Slide>
-        <div className='shoka__header mobile' />
+        <div className='shoka__header py-2 mobile bg-[#262e53] border-b-4 border-[#EF22F550] dark:border-[#868583]'>
+            <Title />
+        </div>
     </div >
-}
-
-function hideSidebar() {
-    isOpen = false
 }

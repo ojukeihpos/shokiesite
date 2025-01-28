@@ -12,7 +12,7 @@ const pageContent = <><div className='shoka__header'>
     </div>
     <hr className='profilehr' />
 </div><div className='about text-justify'>
-        <p>Hello! I'm Sophie, a software developer.</p>
+        <p>Hello! I'm Sophie. I have a Bachelors of Science in Computer Science (BSc.), and work as a software engineer.</p>
         <p className='profilehr text-4xl dark:text-white pt-[1.5rem] underline text-center'>
             Career
         </p>

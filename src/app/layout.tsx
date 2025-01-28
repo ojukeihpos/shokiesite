@@ -4,9 +4,8 @@ import "./globals.css";
 import { Title } from "./Title";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import Header from "./header";
+import { Header } from "./header";
 import localFont from 'next/font/local'
-import Link from "next/link";
 
 const acesFont = localFont({ src: './ACES07_Regular.otf' })
 
@@ -23,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={acesFont.className + " text-[18px]"}>
+    <html lang="en" className={acesFont.className + " text-[18px] scroll-smooth"}>
       <head>
         <script type="module" src="https://cdn.jsdelivr.net/npm/bluesky-profile-feed-embed@^1.0.0/+esm" async></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bluesky-profile-feed-embed@^1.0.0/dist/core.min.css" />
@@ -36,7 +35,7 @@ export default function RootLayout({
 
         <div id="mobile-component" className="lg:hidden">
           <Header />
-          {children}
+            {children}
         </div>
 
         {/* Mobile */}
@@ -45,9 +44,7 @@ export default function RootLayout({
         <div id="desktop-component" className="hidden lg:inline">
           <DesktopBackground />
           <div id="shoka__name">
-            <Link prefetch href="/">
-              <Title text='Shoka' />
-            </Link>
+            <Title />
           </div>
           <div id="shoka__frame" />
           <div className="shoka__forward-vents" />

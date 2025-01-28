@@ -1,8 +1,10 @@
-import Head from "next/head"
-import Link from "next/link"
-import Script from "next/script"
-import { PostThread } from 'react-bluesky-embed'
 import Parser from 'rss-parser'
+
+const pageContent = <><div className='text-white'>
+  <p>This is my website. It covers a great deal about myself and what I'm up to. I'm continually working on it and experimenting with new things.</p>
+  <p>It's built using NextJS + Tailwind + TypeScript, and hosted on AWS. The source code is <a className="clickable link" href={"https://github.com/ojukeihpos/shokiesite"}>available here.</a></p>
+</div>
+</>
 
 export default async function Page() {
   const parser: Parser = new Parser({
@@ -16,9 +18,7 @@ export default async function Page() {
   })
   let regex = /\/([^\/]+)\/?$/
 
-  return <div className=''>
-    {//<div className="hidden lg:inline max-h-screen h-[80%] overflow-y-scroll left-0 right-0 top-0 bottom-0 m-auto w-fit z-10 absolute border-black border-4 rounded-xl">
-    }
+  return <div>
     <div id="desktop-component" className="hidden lg:inline">
       <div className='page-content'>
         <div id='titlehead'>
@@ -26,8 +26,7 @@ export default async function Page() {
         </div>
         <hr className='profilehr' />
         <div className='about'>
-          <p>This is my website. It covers a great deal about myself and what I'm up to. I'm continually working on it and experimenting with new things.</p>
-          <p>It's built using NextJS + Tailwind + TypeScript, and hosted on AWS. The source code is <a className="clickable link" href={"https://github.com/ojukeihpos/shokiesite"}>available here.</a></p>
+          {pageContent}
           {/*<div className='sticky top-0 z-20 flex flex-col align-center w-[100%] py-[5%] px-4 mx-auto justify-center items-center bg-[#eeeeee] text-black border-x-4 border-y-4 border-black'>
         {feed.title}<br />{feed.description}
       </div>
@@ -43,10 +42,9 @@ export default async function Page() {
         </div>
       </div>
     </div>
-    <div className="lg:hidden flex flex-col min-h-full h-screen bg-[#3c3d37]">
-      <div id='mobile-main-content' className="mt-[3em] mx-auto">
-        <div>Hello!</div>
-        <div>This is the mobile version of my website. It's admittedly a little barebones from the React {'->'} NextJS port. Take a look around at what's been brought over, and there'll be more soon!</div>
+    <div className="lg:hidden flex flex-col min-h-full h-screen dark:bg-[#3c3d37]">
+      <div id='mobile-main-content' className="mt-[3em] mx-auto p-4">
+        {pageContent}
       </div>
     </div>
   </div >

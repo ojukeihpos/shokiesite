@@ -8,14 +8,6 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(to bottom,
@@ -524,7 +516,7 @@ li {
   width: 10px;
   top: 0;
   filter: blur(2px);
-  box-shadow: 0 0 5px 5px #c93e25; 
+  box-shadow: 0 0 5px 5px #c93e25;
   transition: .1s all ease-in;
   z-index: 1;
   transform-origin: bottom;
@@ -707,72 +699,6 @@ a {
   color: black;
 }
 
-@media (prefers-color-scheme: dark) {
-  .exit-button {
-    color: #ffffff;
-    text-shadow: #c93e25 1px 0 10px;
-  }
-
-  #Background {
-    filter: blur(4px) brightness(0.5) sepia(45%); /* drop-shadow(0px 0px 20px blue) */
-  }
-
-  #shoka__name {
-    color: white;
-  }
-
-  #shoka__frame {
-    filter: grayscale(98%);
-  }
-
-  .shoka__header.mobile {
-    filter: grayscale(98%);
-  }
-
-  .shoka__forward-vents {
-    filter: grayscale(98%);
-  }
-
-  .shoka__footer {
-    filter: grayscale(98%);
-  }
-
-  .list-item-text {
-    color: #AE445A;
-  }
-
-  .page-content {
-    background-color: #3c3d37;
-  }
-
-  .mobile-content {
-    background-color: #3c3d37;
-  }
-
-  a.link {
-    color: #AE445A;
-  }
-
-  #titlehead,
-  p,
-  li {
-    color: #eeeeee;
-  }
-
-  .bluesky-embed {
-    background: black !important;
-    border-color: red !important;
-  }
-
-  .logo.s-1xh30xs {
-    filter: invert(14%) sepia(88%) saturate(6443%) hue-rotate(4deg) brightness(93%) contrast(124%);
-  }
-
-  #cosplay-list>li {
-    color: lightgrey;
-  }
-}
-
 .Menu {
   position: relative;
   display: block;
@@ -855,8 +781,6 @@ a {
 .shoka__header.mobile {
   position: fixed;
   top: 0;
-  height: 2.5rem;
-  background-color: #262e53;
   width: 100%;
   display: flex;
   padding-left: 10px;
@@ -865,7 +789,6 @@ a {
   -webkit-text-fill-color: white;
   align-items: center;
   justify-content: center;
-  border-bottom: 2px solid #EF22F550;
 }
 
 .headerTitle {
@@ -881,8 +804,8 @@ a {
   position: fixed;
   width: 24px;
   height: 20px;
-  right: 10px;
-  top: 10px;
+  right: 0.5em;
+  top: 1em;
 }
 
 /* Color/shape of burger icon bars */
@@ -920,7 +843,6 @@ a {
   background: #262e53;
   padding: 1em 1.5em 0;
   font-size: 1.15em;
-  filter: sepia(100%)
 }
 
 /* Morph shape necessary with bubble or elastic */
@@ -930,7 +852,7 @@ a {
 
 /* Wrapper for item list */
 .bm-item-list {
-  color: #b8b7ad;
+  color: #dad2c7;
   padding: 0.8em;
 }
 
@@ -949,54 +871,70 @@ a {
   filter: sepia(100%)
 }
 
-#bluesky-embed>div:nth-child(1)>div:nth-child(1)>div:nth-child(1)>div:nth-child(1)>div:nth-child(2) {
-  /* look for div with bluesky id, hides the "comments" section */
-  display: none;
-}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
 
-#bluesky-embed>div:nth-child(1)>div:nth-child(1)>div:nth-child(1)>div:nth-child(1)>div:nth-child(1)>a:nth-child(4) {
-  display: none;
-}
+  .exit-button {
+    color: #ffffff;
+    text-shadow: #c93e25 1px 0 10px;
+  }
 
-#bluesky-embed>div:nth-child(1)>div:nth-child(1)>div:nth-child(1)>div:nth-child(1)>div:nth-child(1)>a:nth-child(5) {
-  display: none;
-}
+  #Background {
+    filter: blur(4px) brightness(0.5) sepia(45%);
+    /* drop-shadow(0px 0px 20px blue) */
+  }
 
-.bsky-feed .bsky-post #bluesky-embed {
-  width: 500px;
-}
+  #shoka__name {
+    color: white;
+  }
 
-.bsky-feed .bsky-post #bluesky-embed .rounded-xl {
-  background-color: rgb(58, 58, 58);
-  border-color: rgb(58, 58, 58);
-}
+  #shoka__frame {
+    filter: grayscale(98%);
+  }
 
-#bluesky-embed a.transition-colors {
-  border-color: grey;
-}
+  .shoka__header.mobile {
+    filter: grayscale(98%);
+  }
 
-#bluesky-embed a.transition-colors:hover {
-  background-color: black;
-}
+  .shoka__forward-vents {
+    filter: grayscale(98%);
+  }
 
-.bsky-feed .bsky-post:not(.bsky-post ~ .bsky-post) #bluesky-embed .rounded-xl {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  border-top-color: grey;
-  border-left-color: grey;
-  border-right-color: grey;
-}
+  .shoka__footer {
+    filter: grayscale(98%);
+  }
 
-.bsky-feed .bsky-post~.bsky-post #bluesky-embed .rounded-xl {
-  border-radius: 0;
-  border-left-color: grey;
-  border-right-color: grey;
-}
+  .list-item-text {
+    color: #AE445A;
+  }
 
-.bsky-feed .bsky-post:nth-last-child(2) #bluesky-embed .rounded-xl {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-bottom-left-radius: 0.75rem;
-  border-bottom-right-radius: 0.75rem;
-  border-bottom-color: grey;
+  .page-content {
+    background-color: #3c3d37;
+  }
+
+  .mobile-content {
+    background-color: #3c3d37;
+  }
+
+  a.link {
+    color: #AE445A;
+  }
+
+  #titlehead,
+  p,
+  li {
+    color: #eeeeee;
+  }
+
+  #cosplay-list>li {
+    color: lightgrey;
+  }
+
+  .bm-menu {
+    filter: grayscale(99%);
+  }
 }
