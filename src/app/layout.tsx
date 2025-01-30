@@ -2,14 +2,35 @@ import type { Metadata } from "next";
 import { Background as DesktopBackground } from "./Background";
 import "./globals.css";
 import { Title } from "./Title";
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import { Header } from "./header";
 import localFont from 'next/font/local'
+import { List } from "./List";
 
 const acesFont = localFont({ src: './ACES07_Regular.otf' })
 
-const List = dynamic(() => import('./List'))
+const pagesList = [
+  {
+    id: 0,
+    text: "HOME",
+    page: "/"
+  },
+  {
+    id: 1,
+    text: "PROFESSIONAL",
+    page: "professional"
+  },
+  /*{
+    id: 2,
+    text: "PROJECTS",
+    page: "projects"
+  },*/
+  {
+    id: 3,
+    text: "PERSONAL",
+    page: "personal"
+  },
+]
 
 export const metadata: Metadata = {
   title: "Shoka's Hub",
@@ -34,8 +55,8 @@ export default function RootLayout({
         {/* Mobile */}
 
         <div id="mobile-component" className="lg:hidden">
-          <Header />
-            {children}
+          <Header pages={pagesList} />
+          {children}
         </div>
 
         {/* Mobile */}
@@ -48,7 +69,7 @@ export default function RootLayout({
           </div>
           <div id="shoka__frame" />
           <div className="shoka__forward-vents" />
-          <List />
+          <List pages={pagesList} />
           {children}
           <footer className="shoka__footer">
             <Image alt='' className='parts straight_vents' src={require('./assets/borders/parts_04.svg').default} />

@@ -11,8 +11,9 @@ const pageContent = <><div className='shoka__header'>
         <a className='link' href="mailto:sophie@shokie.xyz">sophie@shokie.xyz</a>
     </div>
     <hr className='profilehr' />
-</div><div className='about text-justify'>
-        <p>Hello! I'm Sophie. I have a Bachelors of Science in Computer Science (BSc.), and work as a software engineer.</p>
+</div>
+    <div className='about text-justify'>
+        <p>Hello! I'm Sophie. I have a Bachelor of Science in Computer Science (BSc.), and work as a software engineer.</p>
         <p className='profilehr text-4xl dark:text-white pt-[1.5rem] underline text-center'>
             Career
         </p>
@@ -79,14 +80,14 @@ const pageContent = <><div className='shoka__header'>
 export default function Professional() {
     return <div>
         <div className="lg:hidden">
-            <div className='mobile-content min-h-screen h-[100%] p-10'>
+            <div className='mobile-content h-screen p-10'>
                 {pageContent}
             </div>
         </div>
 
         <div id="desktop-component" className="hidden lg:inline">
             <Link prefetch href="/">
-                <div className='exit-button clickable mr-5'>Exit</div>
+                <div className='exit-button clickable mr-5'>Back</div>
             </Link>
             <div className='page-content mr-5'>
                 {pageContent}

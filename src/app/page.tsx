@@ -2,7 +2,7 @@ import Parser from 'rss-parser'
 
 const pageContent = <><div className='text-white'>
   <p>This is my website. It covers a great deal about myself and what I'm up to. I'm continually working on it and experimenting with new things.</p>
-  <p>It's built using NextJS + Tailwind + TypeScript, and hosted on AWS. The source code is <a className="clickable link" href={"https://github.com/ojukeihpos/shokiesite"}>available here.</a></p>
+  <p>The source code is <a className="clickable link" href={"https://github.com/ojukeihpos/shokiesite"}>available here.</a></p>
 </div>
 </>
 

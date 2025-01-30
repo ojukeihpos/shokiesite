@@ -29,13 +29,13 @@ const pageContent = <><div id='titlehead'>
 export default function Home() {
   return <div>
     <div id="mobile-component" className="lg:hidden">
-      <div className='mobile-content min-h-screen h-[100%] p-10'>
+      <div className='mobile-content h-screen p-10'>
         {pageContent}
       </div>
     </div>
     <div id="desktop-component" className="hidden lg:inline">
       <Link prefetch href="/">
-        <div className='exit-button clickable mr-5'>Exit</div>
+        <div className='exit-button clickable mr-5'>Back</div>
       </Link>
       <div className='content'>
         <div className='shoka__header' />
