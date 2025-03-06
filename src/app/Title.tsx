@@ -26,7 +26,7 @@ export const Title = () => {
         scramble: 4,
         seed: 0,
     })
-    return <Link prefetch href="/" onTouchStartCapture={() => incrementTitle()} onMouseOverCapture={() => incrementTitle()}>
+    return <Link href="/" onTouchStartCapture={() => incrementTitle()} onMouseOverCapture={() => incrementTitle()}>
         <div ref={ref} onMouseOverCapture={replay} className='clickable lg:text-[2.5rem] text-[2rem]' />
     </Link>
 }

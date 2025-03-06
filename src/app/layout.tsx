@@ -12,22 +12,27 @@ const acesFont = localFont({ src: './ACES07_Regular.otf' })
 const pagesList = [
   {
     id: 0,
-    text: "HOME",
+    text: "home",
     page: "/"
   },
   {
     id: 1,
-    text: "PROFESSIONAL",
-    page: "professional"
+    text: "software",
+    page: "software"
   },
-  /*{
+  {
     id: 2,
-    text: "PROJECTS",
-    page: "projects"
-  },*/
+    text: "eSports",
+    page: "eSports"
+  },
   {
     id: 3,
-    text: "PERSONAL",
+    text: "projects",
+    page: "projects"
+  },
+  {
+    id: 4,
+    text: "personal",
     page: "personal"
   },
 ]

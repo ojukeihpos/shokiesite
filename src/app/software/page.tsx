@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const pageContent = <><div className='shoka__header'>
     <div id='titlehead'>
-        Professional
+        Software Engineering
     </div>
     <div className='socials__bar'>
         <a className='link' href="https://github.com/ojukeihpos">github</a>
@@ -70,17 +70,16 @@ const pageContent = <><div className='shoka__header'>
             </div>
         </div>
         <p className='profilehr text-4xl dark:text-white underline text-center'>Other</p>
-        <p className='border-l-4 border-black dark:border-[#dad2c7] pl-4 my-2'>- <span className='italic'>Wilfrid Laurier University - StartHacks</span> Founding Member, a university-based hackathon</p>
+        <p className='border-l-4 border-black dark:border-[#dad2c7] pl-4 my-2'>- <span className='italic'>Wilfrid Laurier University - StartHacks</span> Founding Team Member, a university-based hackathon</p>
         <p className='border-l-4 border-black dark:border-[#dad2c7] pl-4 my-2'>- <span className='italic'>Laurier Pride Society</span> Co-President and Founding Member, a group primarily focused on spreading awareness and providing a safe space for queer students</p>
         <p className='border-l-4 border-black dark:border-[#dad2c7] pl-4 my-2'>- <span className='italic'>University of Waterloo Fighting Games Club</span> Accountant</p>
-        <p className='border-l-4 border-black dark:border-[#dad2c7] pl-4 my-2'>- Best Pitch winner at <a className="link" href="https://devpost.com/software/healthsimple">{"<Br/eak>Inequality"}</a> (<a className='link' href='https://devpost.com/captainkesty'>devpost</a>) with a low-spec app providing medical resources in areas of low access. Users could input symptoms and be given appropriate medical information in a simple and traditionally understood method (SMS or search engine)</p>
         <p className='border-l-4 border-black dark:border-[#dad2c7] pl-4 my-2'>- Open-source contributor to <a className="link" href="https://github.com/DefinitelyTyped/DefinitelyTyped">DefinitelyTyped</a> by adding typings to <a className="link" href="https://github.com/cettoana/react-scramble">react-scramble</a>. Can be seen in action by hovering over (if on desktop) the name on the top left of this page</p>
     </div></>
 
 export default function Professional() {
     return <div>
         <div className="lg:hidden">
-            <div className='mobile-content h-screen p-10'>
+            <div className='mobile-content p-10'>
                 {pageContent}
             </div>
         </div>

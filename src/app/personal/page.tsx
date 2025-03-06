@@ -17,9 +17,7 @@ const pageContent = <><div id='titlehead'>
     <p className='profilehr text-4xl dark:text-white pt-[1.5rem] underline text-center'>
       Fighting Games
     </p>
-    <p>I've been involved in the Fighting Game Community for as long as I can remember. I got my start with Street Fighter IV, and since then, my love for the genre has lead me to discover new friendships both internationally and locally. I frequented the <span className='italic'>University of Waterloo Fighting Game Club</span> during my time in university, and have traveled to the US for events.</p>
-    <p>I got the opportunity to work under <Link href={"https://www.consolegamingleague.com/"} className='clickable link'><span className='italic'>Console Gaming League (CGL)</span></Link> as a tournament organizer and administration. While short lived, it was where I got my bearings and understanding of tournament workings.</p>
-    <p>I also got the opportunity to work for <Link href={"https://incendium.gg/"} className='clickable link'><span className='italic'>Incendium Gaming</span></Link> doing data entry (and, unofficially, a lot of other administrative duties) for Electric Clash 2024.</p>
+    <p>I've been involved in the Fighting Game Community for as long as I can remember. I got my start with Street Fighter IV, and since then, my love for the genre has lead me to discover new friendships both internationally and locally. I frequented the <span className='italic'>University of Waterloo Fighting Game Club</span> during my time in university, and have traveled internationally for events.</p>
     <p className='profilehr text-4xl dark:text-white pt-[1.5rem] underline text-center'>
       Cosplay
     </p>
@@ -28,8 +26,8 @@ const pageContent = <><div id='titlehead'>
 
 export default function Home() {
   return <div>
-    <div id="mobile-component" className="lg:hidden">
-      <div className='mobile-content h-screen p-10'>
+    <div className="lg:hidden flex flex-col min-h-full h-screen dark:bg-[#3c3d37]">
+      <div id='mobile-main-content' className="mt-[3em] mx-auto p-4">
         {pageContent}
       </div>
     </div>
