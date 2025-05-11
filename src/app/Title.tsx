@@ -1,6 +1,7 @@
 "use client"
+
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { Suspense, useState } from 'react';
 import { useScramble } from 'use-scramble';
 
 const TITLES = [
@@ -26,7 +27,9 @@ export const Title = () => {
         scramble: 4,
         seed: 0,
     })
-    return <Link href="/" onTouchStartCapture={() => incrementTitle()} onMouseOverCapture={() => incrementTitle()}>
-        <div ref={ref} onMouseOverCapture={replay} className='clickable lg:text-[2.5rem] text-[2rem]' />
-    </Link>
+    return <Suspense fallback={<div>Loading...</div>}>
+        <Link href="/" onTouchStartCapture={() => incrementTitle()} onMouseOverCapture={() => incrementTitle()}>
+            <div ref={ref} onMouseOverCapture={replay} className='clickable lg:text-[2.5rem] text-[2rem]' />
+        </Link>
+    </Suspense>
 }

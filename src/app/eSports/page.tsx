@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import Link from 'next/link';
+import Loading from './loading';
 
 const pageContent = <><div className='shoka__header'>
     <div id='titlehead'>
@@ -46,20 +47,22 @@ const pageContent = <><div className='shoka__header'>
     </div></>
 
 export default function eSports() {
-    return <div>
+    return <Suspense fallback={<Loading />}>
         <div className="lg:hidden flex flex-col min-h-full h-screen dark:bg-[#3c3d37]">
             <div id='mobile-main-content' className="mt-[3em] mx-auto p-4">
                 {pageContent}
             </div>
         </div>
-
         <div id="desktop-component" className="hidden lg:inline">
             <Link prefetch href="/">
                 <div className='exit-button clickable mr-5'>Back</div>
             </Link>
-            <div className='page-content mr-5'>
-                {pageContent}
+            <div className='content'>
+                <div className='shoka__header' />
+                <div className='page-content mr-5'>
+                    {pageContent}
+                </div>
             </div>
         </div>
-    </div>
+    </Suspense>
 }

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import Link from 'next/link';
+import Loading from './loading';
 
 const pageContent = <><div id='titlehead'>
   Personal
@@ -24,8 +25,8 @@ const pageContent = <><div id='titlehead'>
     <p>There's not a lot to write about here for cosplay, because it's (unsurprisingly) a very visual medium. I like to cosplay for events, and I try to keep things fresh by not doing the same thing twice.</p>
   </div></>
 
-export default function Home() {
-  return <div>
+export default async function Home() {
+  return <Suspense fallback={<Loading />}>
     <div className="lg:hidden flex flex-col min-h-full h-screen dark:bg-[#3c3d37]">
       <div id='mobile-main-content' className="mt-[3em] mx-auto p-4">
         {pageContent}
@@ -42,5 +43,5 @@ export default function Home() {
         </div>
       </div>
     </div>
-  </div>
+  </Suspense>
 }

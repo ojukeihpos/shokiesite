@@ -68,17 +68,18 @@ export default function RootLayout({
         {/* ===================================== */}
         {/* Desktop */}
         <div id="desktop-component" className="hidden lg:inline">
-          <DesktopBackground />
-          <div id="shoka__name">
-            <Title />
+          <div id="leftComponents">
+            <DesktopBackground />
+            <div id="shoka__name">
+              <Title />
+            </div>
+            <div id="shoka__frame" />
+            <div className="shoka__forward-vents" />
+            <List pages={pagesList} />
           </div>
-          <div id="shoka__frame" />
-          <div className="shoka__forward-vents" />
-          <List pages={pagesList} />
           {children}
-          <footer className="shoka__footer">
-            <Image alt='' className='parts straight_vents' src={require('./assets/borders/parts_04.svg').default} />
-          </footer>
+          <footer className="shoka__footer" />
+          <Image alt='' className='parts straight_vents' src={require('./assets/borders/parts_04.svg').default} />
         </div>
 
         {/* Desktop */}

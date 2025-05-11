@@ -1,3 +1,5 @@
+import { Suspense } from "react"
+import Loading from "./loading"
 
 const pageContent = <><div className='text-white'>
   <p>This is my website. It covers a great deal about myself and what I'm up to. I'm continually working on it and experimenting with new things.</p>
@@ -7,7 +9,7 @@ const pageContent = <><div className='text-white'>
 
 export default async function Page() {
 
-  return <div>
+  return <Suspense fallback={<Loading />}>
     <div id="desktop-component" className="hidden lg:inline">
       <div className='page-content'>
         <div id='titlehead'>
@@ -24,5 +26,5 @@ export default async function Page() {
         {pageContent}
       </div>
     </div>
-  </div >
+  </Suspense>
 }
