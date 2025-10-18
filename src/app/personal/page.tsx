@@ -1,6 +1,8 @@
-import React, { Suspense } from 'react';
+"use client"
+import React, { Suspense, useRef } from 'react';
 import Link from 'next/link';
 import Loading from './loading';
+import ScrollToTopButton from '../scrollToTop';
 
 const pageContent = <><div id='titlehead'>
   Personal
@@ -20,12 +22,17 @@ const pageContent = <><div id='titlehead'>
     </p>
     <p>I've been involved in the Fighting Game Community for as long as I can remember. I got my start with Street Fighter IV, and since then, my love for the genre has lead me to discover new friendships both internationally and locally. I frequented the <span className='italic'>University of Waterloo Fighting Game Club</span> during my time in university, and have traveled internationally for events.</p>
     <p className='profilehr text-4xl dark:text-white pt-[1.5rem] underline text-center'>
+      Tetris
+    </p>
+    <p>I play competitive modern Tetris, a version of Tetris that focuses on head-to-head interactions. I'm actively involved in the community and am currently lending my skills to <i>Dup Cup</i>, a tournament consisting of VTuber talents to showcase their proficiency in the sport.</p>
+    <p className='profilehr text-4xl dark:text-white pt-[1.5rem] underline text-center'>
       Cosplay
     </p>
     <p>There's not a lot to write about here for cosplay, because it's (unsurprisingly) a very visual medium. I like to cosplay for events, and I try to keep things fresh by not doing the same thing twice.</p>
   </div></>
 
-export default async function Home() {
+export default function Home() {
+  const scrollableDivRef = useRef<HTMLDivElement>(null)
   return <Suspense fallback={<Loading />}>
     <div className="lg:hidden flex flex-col min-h-full h-screen dark:bg-[#3c3d37]">
       <div id='mobile-main-content' className="mt-[3em] mx-auto p-4">
@@ -33,12 +40,13 @@ export default async function Home() {
       </div>
     </div>
     <div id="desktop-component" className="hidden lg:inline">
+      <ScrollToTopButton scrollableDivRef={scrollableDivRef} threshold={20}/>
       <Link prefetch href="/">
         <div className='exit-button clickable mr-5'>Back</div>
       </Link>
-      <div className='content'>
+      <div className='content'  >
         <div className='shoka__header' />
-        <div className='page-content mr-5'>
+        <div className='page-content mr-5' ref={scrollableDivRef}>
           {pageContent}
         </div>
       </div>

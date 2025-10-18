@@ -53,7 +53,6 @@ export const List = (props: Props) => {
 }
 
 function setHighlighterPosition(yCoord: number) {
-    console.log(yCoord)
     if (document.getElementById("highlight")) {
         document.getElementById("highlight")!.style.height = document.getElementById("shoka__" + yCoord.toString())?.offsetHeight + "px"
         document.getElementById("highlight")!.style.transform = "translateY(" + document.getElementById("shoka__" + yCoord.toString())?.getBoundingClientRect().top + "px)"//document.getElementById("shoka__" + item.id.toString())?.getBoundingClientRect().top + "px"

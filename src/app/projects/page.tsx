@@ -1,6 +1,8 @@
-import React, { Suspense } from 'react';
+"use client"
+import React, { Suspense, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Loading from './loading';
+import ScrollToTopButton from '../scrollToTop';
 
 const pageContent = <><div className="shoka__header">
     <div id='titlehead'>
@@ -12,6 +14,11 @@ const pageContent = <><div className="shoka__header">
     <hr className='profilehr' />
 </div>
     <div className='about text-justify'>
+        <div id="#umacalculator" className='py-2'>
+            <p className='text-xl underline'>Uma-calculator</p>
+            <p>An evaluation calculator used to gauge the rank of trainees in <i>Umamusume: Pretty Derby</i>. Originally designed as a simple translation from Japanese to English, eventually flourished into a recreation.</p>
+            <p><Link href={"https://uma.shokie.xyz"} className='clickable link'>link</Link></p>
+        </div>
         <div id="#analysispaster" className='py-2'>
             <p className='text-xl underline'>Analysis Paster</p>
             <p>A Mozilla Firefox and Google Chrome extension that inserts a button into <Link href="https://www.fflogs.com/" className='clickable link'>FFLogs</Link> to automatically paste logs into <Link href={"https://xivanalysis.com/"} className='clickable link'>xivanalysis</Link>.</p>
@@ -29,7 +36,7 @@ const pageContent = <><div className="shoka__header">
             <p>Based on <Link href={"https://github.com/Code-Bullet/SnakeFusion"} className='clickable link'>the code from Code-Bullet</Link>, this self-learning Snake AI uses genetic algorithms and neural networks. I modified the code to run more simulations per generation, and adjusted the neural network to prevent redundancies.</p>
         </div>
         <div id="#beerbuddy" className='py-2'>
-            <p className='text-xl underline'>BeerBuddy - Group Project</p>
+            <p className='text-xl underline'>BeerBuddy - University Group Project</p>
             <p>A web app designed to offer alcoholic recommendations based on a user's criteria such as taste, alcohol percentage, colour, etc. My role was to oversee multiple teams and their tasks, assigning them and assisting as necessary.</p>
         </div>
         <div id="#healthsimple" className='py-2'>
@@ -46,6 +53,7 @@ const pageContent = <><div className="shoka__header">
     </div></>
 
 export default function Professional() {
+    const scrollableDivRef = useRef<HTMLDivElement>(null)
     return <Suspense fallback={<Loading />}>
         <div className="lg:hidden flex flex-col min-h-full h-screen dark:bg-[#3c3d37]">
             <div id='mobile-main-content' className="mt-[3em] mx-auto p-4">
@@ -53,12 +61,13 @@ export default function Professional() {
             </div>
         </div>
         <div id="desktop-component" className="hidden lg:inline">
+            <ScrollToTopButton scrollableDivRef={scrollableDivRef} threshold={10} />
             <Link prefetch href="/">
                 <div className='exit-button clickable mr-5'>Back</div>
             </Link>
-            <div className='content'>
+            <div className='content'  >
                 <div className='shoka__header' />
-                <div className='page-content mr-5'>
+                <div className='page-content mr-5' ref={scrollableDivRef}>
                     {pageContent}
                 </div>
             </div>

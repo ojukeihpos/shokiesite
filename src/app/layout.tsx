@@ -22,8 +22,8 @@ const pagesList = [
   },
   {
     id: 2,
-    text: "eSports",
-    page: "eSports"
+    text: "non-software",
+    page: "other"
   },
   {
     id: 3,

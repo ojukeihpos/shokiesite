@@ -2,8 +2,8 @@ import { Suspense } from "react"
 import Loading from "./loading"
 
 const pageContent = <><div className='text-white'>
-  <p>This is my website. It covers a great deal about myself and what I'm up to. I'm continually working on it and experimenting with new things.</p>
-  <p>The source code is <a className="clickable link" href={"https://github.com/ojukeihpos/shokiesite"}>available here.</a></p>
+  <p className="text-center">Software Developer. Entertainer. Competitor. I do a lot of things.</p>
+  <p className="text-center">If you're interested in learning about me, pick from one of the options on the left!</p>
 </div>
 </>
 

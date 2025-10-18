@@ -1,6 +1,8 @@
-import React, { Suspense } from 'react';
+"use client"
+import React, { Suspense, useRef } from 'react';
 import Link from 'next/link';
 import Loading from './loading';
+import ScrollToTopButton from '../scrollToTop';
 
 const pageContent = <><div className='shoka__header'>
     <div id='titlehead'>
@@ -71,13 +73,11 @@ const pageContent = <><div className='shoka__header'>
             </div>
         </div>
         <p className='profilehr text-4xl dark:text-white underline text-center'>Other</p>
-        <p className='border-l-4 border-black dark:border-[#dad2c7] pl-4 my-2'>- <span className='italic'>Wilfrid Laurier University - StartHacks</span> Founding Team Member, a university-based hackathon</p>
-        <p className='border-l-4 border-black dark:border-[#dad2c7] pl-4 my-2'>- <span className='italic'>Laurier Pride Society</span> Co-President and Founding Member, a group primarily focused on spreading awareness and providing a safe space for queer students</p>
-        <p className='border-l-4 border-black dark:border-[#dad2c7] pl-4 my-2'>- <span className='italic'>University of Waterloo Fighting Games Club</span> Accountant</p>
         <p className='border-l-4 border-black dark:border-[#dad2c7] pl-4 my-2'>- Open-source contributor to <a className="link" href="https://github.com/DefinitelyTyped/DefinitelyTyped">DefinitelyTyped</a> by adding typings to <a className="link" href="https://github.com/cettoana/react-scramble">react-scramble</a>. Can be seen in action by hovering over (if on desktop) the name on the top left of this page</p>
     </div></>
 
 export default function Professional() {
+    const scrollableDivRef = useRef<HTMLDivElement>(null)
     return <Suspense fallback={<Loading />}>
         <div className="lg:hidden flex flex-col min-h-full h-screen dark:bg-[#3c3d37]">
             <div id='mobile-main-content' className="mt-[3em] mx-auto p-4">
@@ -85,12 +85,13 @@ export default function Professional() {
             </div>
         </div>
         <div id="desktop-component" className="hidden lg:inline">
+            <ScrollToTopButton scrollableDivRef={scrollableDivRef} />
             <Link prefetch href="/">
                 <div className='exit-button clickable mr-5'>Back</div>
             </Link>
-            <div className='content'>
+            <div className='content'  >
                 <div className='shoka__header' />
-                <div className='page-content mr-5'>
+                <div className='page-content mr-5' ref={scrollableDivRef}>
                     {pageContent}
                 </div>
             </div>
