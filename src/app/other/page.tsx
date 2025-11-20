@@ -19,6 +19,20 @@ const pageContent = <><div className='shoka__header'>
             <div className=''>
                 <span className={`dark:text-gray underline flex flex-wrap justify-between`}>
                     <p className='text-xl'>Data Entry Administrator</p>
+                    <p className='sm:text-xl'>11/2025</p>
+                </span>
+                <div>Electric Clash 2025</div>
+                <Link href={`https://incendium.gg/`} className='clickable link'><span className='italic'>Incendium Gaming</span></Link>
+                <div className='border-l-4 border-blue-400 pl-4 my-2'></div>
+            </div>
+            <div className='border-l-4 border-black dark:border-[#dad2c7] pl-4'>
+                <p>- Responsible for entering and verifying tournament match results, ensuring smoothness and keeping things on schedule</p>
+            </div>
+        </div>
+        <div className='content-segment py-[1rem]'>
+            <div className=''>
+                <span className={`dark:text-gray underline flex flex-wrap justify-between`}>
+                    <p className='text-xl'>Data Entry Administrator</p>
                     <p className='sm:text-xl'>04/2024</p>
                 </span>
                 <div>Electric Clash 2024</div>
