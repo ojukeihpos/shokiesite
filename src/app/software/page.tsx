@@ -23,7 +23,7 @@ const pageContent = <><div className='shoka__header'>
         <div className='content-segment py-[1rem]'>
             <div className=''>
                 <span className='dark:text-gray underline sm:flex sm:justify-between'>
-                    <p className='text-xl'>Freelance Web Developer</p> <p className='sm:text-xl'> 03/2023 - Present</p>
+                    <p className='text-xl'>Freelance Web Developer</p> <p className='sm:text-xl'> 03/2023 - Ongoing</p>
                 </span>
                 <p>Online</p>
                 <div className='border-l-4 border-blue-400 pl-4 my-2'>Skills: Next.js, TypeScript, Node.js, Amazon Web Services (AWS), Git, Figma</div>

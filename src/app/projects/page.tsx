@@ -14,6 +14,11 @@ const pageContent = <><div className="shoka__header">
     <hr className='profilehr' />
 </div>
     <div className='about text-justify'>
+        <div id="#hakureicounter" className='py-2'>
+            <p className='text-xl underline'>HakureiCounter</p>
+            <p>Lightweight C# Program that reads and writes to a text file. Increments and decrements a number, displays it onto a changeable coloured background. Designed to be used with broadcasting software.</p>
+            <p><Link href={"https://github.com/ojukeihpos/counter-gui"} className='clickable link'>link</Link></p>
+        </div>
         <div id="#umacalculator" className='py-2'>
             <p className='text-xl underline'>Uma-calculator</p>
             <p>An evaluation calculator used to gauge the rank of trainees in <i>Umamusume: Pretty Derby</i>. Originally designed as a simple translation from Japanese to English, eventually flourished into a recreation.</p>

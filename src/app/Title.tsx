@@ -5,7 +5,7 @@ import React, { Suspense, useState } from 'react';
 import { useScramble } from 'use-scramble';
 
 const TITLES = [
-    "Sophie", "Shoka", "Reimu"
+    "Sophie", "Reimu"
 ]
 
 let currTitle = 0

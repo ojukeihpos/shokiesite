@@ -18,15 +18,31 @@ const pageContent = <><div className='shoka__header'>
         <div className='content-segment py-[1rem]'>
             <div className=''>
                 <span className={`dark:text-gray underline flex flex-wrap justify-between`}>
+                    <p className='text-xl'>Video Editor</p>
+                    <p className='sm:text-xl'>12/2025 - Ongoing</p>
+                </span>
+                <div>Digital</div>
+                <div className='border-l-4 border-blue-400 pl-4 my-2'>Skills: DaVinci Resolve</div>
+            </div>
+            <div className='border-l-4 border-black dark:border-[#dad2c7] pl-4'>
+                <p>- Lead video editor for <Link href={`https://twitch.tv/WAR6Actual/`} className='clickable link'><span className='italic'>WAR6Actual</span></Link> and <Link href={`https://twitch.tv/wild_robinn/`} className='clickable link'><span className='italic'>WildRobin</span></Link></p>
+                <p>- Responsible for taking full length video streams and processing them into smaller highlight reels</p>
+                <p>- Manages and schedules uploads for content creators</p>
+            </div>
+        </div>
+        <div className='content-segment py-[1rem]'>
+            <div className=''>
+                <span className={`dark:text-gray underline flex flex-wrap justify-between`}>
                     <p className='text-xl'>Data Entry Administrator</p>
-                    <p className='sm:text-xl'>11/2025</p>
+                    <p className='sm:text-xl'>04/2024</p>
                 </span>
                 <div>Electric Clash 2025</div>
                 <Link href={`https://incendium.gg/`} className='clickable link'><span className='italic'>Incendium Gaming</span></Link>
                 <div className='border-l-4 border-blue-400 pl-4 my-2'></div>
             </div>
             <div className='border-l-4 border-black dark:border-[#dad2c7] pl-4'>
-                <p>- Responsible for entering and verifying tournament match results, ensuring smoothness and keeping things on schedule</p>
+                <p>- Primarily responsible for entering and verifying tournament match results, ensuring smoothness and keeping things on schedule</p>
+                <p>- Secondarily responsible for processing player information to the Social Media team for media graphics</p>
             </div>
         </div>
         <div className='content-segment py-[1rem]'>
