@@ -265,9 +265,9 @@ h1 {
   font-style: normal;
 }
 
-@media screen and (min-height: 1000px) and (max-width: 1000px) {
+@media screen and (min-height: 1000px) and (min-width: 1000px) {
   #titlehead {
-    padding: 10vw 10% 1em 10%;
+    padding: 5% 10% 0% 10%;
     background-color: #00ffff95;
     position: relative;
     vertical-align: middle;
@@ -949,5 +949,9 @@ a {
 
   .bm-menu {
     filter: grayscale(99%);
+  }
+
+  #titlehead {
+    background-color: transparent;
   }
 }

@@ -18,6 +18,19 @@ const pageContent = <><div className='shoka__header'>
         <div className='content-segment py-[1rem]'>
             <div className=''>
                 <span className={`dark:text-gray underline flex flex-wrap justify-between`}>
+                    <p className='text-xl'>Tournament Bracket Host</p>
+                    <p className='sm:text-xl'>01/2026</p>
+                </span>
+                <div><i>Dup Cup 3</i> (Digital)</div>
+            </div>
+            <div className='border-l-4 border-black dark:border-[#dad2c7] pl-4'>
+                <p>- Tournament bracket host and data entry for <i>Dup Cup 3</i>, an online TETR.IO tournament focused on highlighting virtual entertainers (VTubers) and their block stacking skills.</p>
+                <p>- Coordinated player matches and entered match results into a leaderboard to track and maintain statistics</p>
+            </div>
+        </div>
+        <div className='content-segment py-[1rem]'>
+            <div className=''>
+                <span className={`dark:text-gray underline flex flex-wrap justify-between`}>
                     <p className='text-xl'>Video Editor</p>
                     <p className='sm:text-xl'>12/2025 - Ongoing</p>
                 </span>
@@ -34,24 +47,9 @@ const pageContent = <><div className='shoka__header'>
             <div className=''>
                 <span className={`dark:text-gray underline flex flex-wrap justify-between`}>
                     <p className='text-xl'>Data Entry Administrator</p>
-                    <p className='sm:text-xl'>04/2024</p>
+                    <p className='sm:text-xl'>04/2024, 11/2025</p>
                 </span>
-                <div>Electric Clash 2025</div>
-                <Link href={`https://incendium.gg/`} className='clickable link'><span className='italic'>Incendium Gaming</span></Link>
-                <div className='border-l-4 border-blue-400 pl-4 my-2'></div>
-            </div>
-            <div className='border-l-4 border-black dark:border-[#dad2c7] pl-4'>
-                <p>- Primarily responsible for entering and verifying tournament match results, ensuring smoothness and keeping things on schedule</p>
-                <p>- Secondarily responsible for processing player information to the Social Media team for media graphics</p>
-            </div>
-        </div>
-        <div className='content-segment py-[1rem]'>
-            <div className=''>
-                <span className={`dark:text-gray underline flex flex-wrap justify-between`}>
-                    <p className='text-xl'>Data Entry Administrator</p>
-                    <p className='sm:text-xl'>04/2024</p>
-                </span>
-                <div>Electric Clash 2024</div>
+                <div>Electric Clash 2024 & 2025</div>
                 <Link href={`https://incendium.gg/`} className='clickable link'><span className='italic'>Incendium Gaming</span></Link>
                 <div className='border-l-4 border-blue-400 pl-4 my-2'></div>
             </div>
