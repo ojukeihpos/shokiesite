@@ -1,0 +1,82 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Users\ojuke\AppData\Roaming\npm\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.6.4
+2 info using node@v22.13.1
+3 silly config load:file:C:\Users\ojuke\AppData\Roaming\npm\node_modules\npm\npmrc
+4 silly config load:file:E:\Personal\Projects\sophiesite\frontend\.npmrc
+5 silly config load:file:C:\Users\ojuke\.npmrc
+6 silly config load:file:C:\Users\ojuke\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm ci
+8 verbose argv "ci" "--cache" "npm" "--prefer-offline"
+9 verbose logfile logs-max:10 dir:E:\Personal\Projects\sophiesite\frontend\npm\_logs\2026-01-19T07_28_17_826Z-
+10 verbose logfile E:\Personal\Projects\sophiesite\frontend\npm\_logs\2026-01-19T07_28_17_826Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+13 silly idealTree buildDeps
+14 silly fetch manifest eslint@>=9.0.0
+15 silly packumentCache full:https://registry.npmjs.org/eslint cache-miss
+16 http fetch GET 200 https://registry.npmjs.org/npm 173ms
+17 http fetch GET 200 https://registry.npmjs.org/eslint 94ms (cache miss)
+18 silly packumentCache full:https://registry.npmjs.org/eslint set size:undefined disposed:false
+19 silly fetch manifest jiti@*
+20 silly packumentCache full:https://registry.npmjs.org/jiti cache-miss
+21 http fetch GET 200 https://registry.npmjs.org/jiti 33ms (cache miss)
+22 silly packumentCache full:https://registry.npmjs.org/jiti set size:undefined disposed:false
+23 verbose stack Error: could not resolve
+23 verbose stack     at PlaceDep.failPeerConflict (C:\Users\ojuke\AppData\Roaming\npm\node_modules\npm\node_modules\@npmcli\arborist\lib\place-dep.js:503:25)
+23 verbose stack     at new PlaceDep (C:\Users\ojuke\AppData\Roaming\npm\node_modules\npm\node_modules\@npmcli\arborist\lib\place-dep.js:157:21)
+23 verbose stack     at #buildDepStep (C:\Users\ojuke\AppData\Roaming\npm\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:934:18)
+23 verbose stack     at async Arborist.buildIdealTree (C:\Users\ojuke\AppData\Roaming\npm\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:170:7)
+23 verbose stack     at async CI.exec (C:\Users\ojuke\AppData\Roaming\npm\node_modules\npm\lib\commands\ci.js:63:5)
+23 verbose stack     at async Npm.exec (C:\Users\ojuke\AppData\Roaming\npm\node_modules\npm\lib\npm.js:208:9)
+23 verbose stack     at async module.exports (C:\Users\ojuke\AppData\Roaming\npm\node_modules\npm\lib\cli\entry.js:67:5)
+24 error code ERESOLVE
+25 error ERESOLVE could not resolve
+26 error
+27 error While resolving: eslint-config-next@16.1.2
+27 error Found: eslint@8.57.1[2m[22m
+27 error [2mnode_modules/eslint[22m
+27 error   [34mdev[39m eslint@"^8" from the root project
+27 error   [95mpeer[39m eslint@"^6.0.0 || ^7.0.0 || >=8.0.0" from @eslint-community/eslint-utils@4.9.1[2m[22m
+27 error   [2mnode_modules/@eslint-community/eslint-utils[22m
+27 error     @eslint-community/eslint-utils@"^4.9.1" from @typescript-eslint/utils@8.53.0[2m[22m
+27 error     [2mnode_modules/@typescript-eslint/utils[22m
+27 error       @typescript-eslint/utils@"8.53.0" from @typescript-eslint/eslint-plugin@8.53.0[2m[22m
+27 error       [2mnode_modules/@typescript-eslint/eslint-plugin[22m
+27 error         @typescript-eslint/eslint-plugin@"8.53.0" from typescript-eslint@8.53.0[2m[22m
+27 error         [2mnode_modules/typescript-eslint[22m
+27 error       2 more (@typescript-eslint/type-utils, typescript-eslint)
+27 error     @eslint-community/eslint-utils@"^4.2.0" from eslint@8.57.1
+27 error   10 more (@typescript-eslint/eslint-plugin, ...)
+27 error
+27 error Could not resolve dependency:
+27 error [95mpeer[39m eslint@">=9.0.0" from eslint-config-next@16.1.2[2m[22m
+27 error [2mnode_modules/eslint-config-next[22m
+27 error   [34mdev[39m eslint-config-next@"^16.1.2" from the root project
+27 error
+27 error Conflicting peer dependency: eslint@9.39.2[2m[22m
+27 error [2mnode_modules/eslint[22m
+27 error   [95mpeer[39m eslint@">=9.0.0" from eslint-config-next@16.1.2[2m[22m
+27 error   [2mnode_modules/eslint-config-next[22m
+27 error     [34mdev[39m eslint-config-next@"^16.1.2" from the root project
+27 error
+27 error Fix the upstream dependency conflict, or retry
+27 error this command with --force or --legacy-peer-deps
+27 error to accept an incorrect (and potentially broken) dependency resolution.
+28 error
+28 error
+28 error For a full report see:
+28 error E:\Personal\Projects\sophiesite\frontend\npm\_logs\2026-01-19T07_28_17_826Z-eresolve-report.txt
+29 silly unfinished npm timer idealTree:buildDeps 1768807698229
+30 silly unfinished npm timer idealTree:node_modules/eslint-config-next 1768807698230
+31 verbose cwd E:\Personal\Projects\sophiesite\frontend
+32 verbose os Windows_NT 10.0.26100
+33 verbose node v22.13.1
+34 verbose npm  v11.6.4
+35 notice
+35 notice New [33mminor[39m version of npm available! [33m11.6.4[39m -> [34m11.7.0[39m
+35 notice Changelog: [34mhttps://github.com/npm/cli/releases/tag/v11.7.0[39m
+35 notice To update run: [4mnpm install -g npm@11.7.0[24m
+35 notice  { force: true, [Symbol(proc-log.meta)]: true }
+36 verbose exit 1
+37 verbose code 1
+38 error A complete log of this run can be found in: E:\Personal\Projects\sophiesite\frontend\npm\_logs\2026-01-19T07_28_17_826Z-debug-0.log
