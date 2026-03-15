@@ -14,7 +14,7 @@ const pageContent = <><div id='titlehead'>
         Mahjong
       </p>
       <div className='my-2'>
-        <p>I started learning Mahjong over the pandemic, and have since become a player at various online and offline locations. I've provided streaming and commentating services to <span className='italic'>The NA Online Mahjong Ladder</span>, an online community that hosts Mahjong tournaments.</p>
+        <p>I started learning Mahjong over the pandemic, and have since become a player at various online and offline locations. I've provided broadcasting and commentating services to <span className='italic'>The NA Online Mahjong Ladder</span>, an online community that hosts Mahjong tournaments.</p>
       </div>
     </div>
     <p className='profilehr text-4xl dark:text-white pt-[1.5rem] underline text-center'>
@@ -34,7 +34,7 @@ const pageContent = <><div id='titlehead'>
 export default function Home() {
   const scrollableDivRef = useRef<HTMLDivElement>(null)
   return <Suspense fallback={<Loading />}>
-    <div className="lg:hidden flex flex-col min-h-full h-screen dark:bg-[#3c3d37]">
+    <div className="lg:hidden flex flex-col min-h-screen h-fit dark:bg-[#3c3d37]">
       <div id='mobile-main-content' className="mt-[3em] mx-auto p-4">
         {pageContent}
       </div>

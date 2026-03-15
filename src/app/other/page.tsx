@@ -80,7 +80,7 @@ const pageContent = <><div className='shoka__header'>
 
 export default function Other() {
     return <Suspense fallback={<Loading />}>
-        <div className="lg:hidden flex flex-col min-h-full h-screen dark:bg-[#3c3d37]">
+        <div className="lg:hidden flex flex-col min-h-screen h-fit dark:bg-[#3c3d37]">
             <div id='mobile-main-content' className="mt-[3em] mx-auto p-4">
                 {pageContent}
             </div>
