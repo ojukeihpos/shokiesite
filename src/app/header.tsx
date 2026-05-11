@@ -12,14 +12,33 @@ export const Header = (props: Props) => {
 
     const [isOpen, setIsOpen] = useState(false)
 
-    return <div>
-        <Slide pageWrapId={'page-wrap'} outerContainerId={'outer-container'} right isOpen={isOpen} onStateChange={(state) => setIsOpen(state.isOpen)}>
-            {props.pages.map(page => {
-                return <Link href={page.page} key={page.id} onClick={() => setIsOpen(false)} className='sidebar-tab clickable'>{page.text.charAt(0) + page.text.substring(1)}</Link>
-            })}
+    return <header className="w-full">
+        <Slide
+            pageWrapId={'page-wrap'}
+            outerContainerId={'outer-component'}
+            menuClassName={"flex flex-col"}
+            itemListClassName={"flex flex-col justify-between items-center px-0"}
+            styles={{ bmItemList: { height: '50%', paddingTop: '25%' } }}
+            right
+            isOpen={isOpen}
+            onStateChange={(state) => setIsOpen(state.isOpen)}
+            width={`50%`}
+        >
+            {
+                props.pages.map(page => {
+                    return <Link
+                        href={page.page === "/" ? "/" : `/${page.page}`}
+                        key={page.id}
+                        onClick={() => setIsOpen(false)}
+                        className='sidebar-tab clickable text-white text-2xl my-4 uppercase tracking-widest'
+                    >
+                        {page.text}
+                    </Link>
+                })
+            }
         </Slide>
-        <div className='shoka__header mobile bg-[#262e53] border-b-4 border-[#EF22F550] dark:border-[#868583]'>
+        <div className='shoka__header mobile bg-[#262e53] border-b-4 py-2 border-[#EF22F550] dark:border-[#868583]'>
             <Title />
         </div>
-    </div >
+    </header>
 }

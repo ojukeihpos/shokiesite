@@ -7,39 +7,25 @@ import { Header } from "./header";
 import localFont from 'next/font/local'
 import { List } from "./List";
 
-const acesFont = localFont({ src: './ACES07_Regular.otf' })
+// Importing specific assets for cleaner reference
+import straightVents from './assets/borders/parts_04.svg';
+
+const acesFont = localFont({
+  src: './ACES07_Regular.otf',
+  display: 'swap', // Ensures text remains visible during font load
+})
 
 const pagesList = [
-  {
-    id: 0,
-    text: "home",
-    page: "/"
-  },
-  {
-    id: 1,
-    text: "software",
-    page: "software"
-  },
-  {
-    id: 2,
-    text: "non-software",
-    page: "other"
-  },
-  {
-    id: 3,
-    text: "projects",
-    page: "projects"
-  },
-  {
-    id: 4,
-    text: "personal",
-    page: "personal"
-  },
+  { id: 0, text: "home", page: "/" },
+  { id: 1, text: "software", page: "software" },
+  { id: 2, text: "professional", page: "other" }, // Renamed from non-software for a sharper look
+  { id: 3, text: "projects", page: "projects" },
+  { id: 4, text: "personal", page: "personal" },
 ]
 
 export const metadata: Metadata = {
-  title: "Shoka's Hub",
-  description: "Shoka's personal hub",
+  title: "Sophie_EXE",
+  description: "Sophie's Personal Portfolio & Engineering Hub",
 };
 
 export default function RootLayout({
@@ -48,43 +34,47 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={acesFont.className + " text-[18px] scroll-smooth"}>
+    <html lang="en" className={`${acesFont.className} text-[18px] scroll-smooth`}>
       <head>
-        <script type="module" src="https://cdn.jsdelivr.net/npm/bluesky-profile-feed-embed@^1.0.0/+esm" async></script>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bluesky-profile-feed-embed@^1.0.0/dist/core.min.css" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bluesky-profile-feed-embed@^1.0.0/themes/light.min.css" media="(prefers-color-scheme: light)" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bluesky-profile-feed-embed@^1.0.0/themes/dim.min.css" media="(prefers-color-scheme: dark)" />
       </head>
-      <body>
+      <body className="antialiased bg-gray-400">
 
-        {/* Mobile */}
-
-        <div id="mobile-component" className="lg:hidden">
+        {/* --- MOBILE VIEW --- */}
+        <div id="outer-component" className="lg:hidden flex flex-col min-h-screen">
           <Header pages={pagesList} />
-          {children}
+          <main id='page-wrap' className="flex-1 overflow-y-auto">
+            {children}
+          </main>
         </div>
 
-        {/* Mobile */}
-        {/* ===================================== */}
-        {/* Desktop */}
+        {/* --- DESKTOP VIEW --- */}
         <div id="desktop-component" className="hidden lg:inline">
-          <div id="leftComponents">
-            <DesktopBackground />
-            <div id="shoka__name">
-              <Title />
+          <div id="desktop-component" className="hidden lg:block relative min-h-screen overflow-hidden">
+            <div id="leftComponents">
+              <DesktopBackground />
+              <div id="shoka__name">
+                <Title />
+              </div>
+              <div id="shoka__frame" aria-hidden="true" />
+              <div className="shoka__forward-vents" aria-hidden="true" />
+              <List pages={pagesList} />
             </div>
-            <div id="shoka__frame" />
-            <div className="shoka__forward-vents" />
-            <List pages={pagesList} />
-          </div>
-          {children}
-          <footer className="shoka__footer" />
-          <Image alt='' className='parts straight_vents' src={require('./assets/borders/parts_04.svg').default} />
-        </div>
 
-        {/* Desktop */}
+            <main id="scroll-root" className="page-content">
+              {children}
+            </main>
+
+            <footer className="shoka__footer" aria-hidden="true" />
+            <Image
+              alt=''
+              className='parts straight_vents'
+              src={straightVents}
+              priority
+            />
+          </div>
+        </div>
 
       </body>
-    </html >
+    </html>
   );
 }

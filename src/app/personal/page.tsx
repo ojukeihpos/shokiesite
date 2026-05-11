@@ -1,55 +1,76 @@
 "use client"
-import React, { Suspense, useRef } from 'react';
+import React, { Suspense, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import Loading from './loading';
 import ScrollToTopButton from '../scrollToTop';
+import Loading from './loading';
 
-const pageContent = <><div id='titlehead'>
-  Personal
-  <hr className='profilehr' />
-</div><div className='about'>
-    <p>Hello! I'm Sophie. I'm known for a lot of different things, so I'll do my best to try and cover all my interests below.</p>
-    <div>
-      <p className='profilehr text-4xl dark:text-white pt-[1.5rem] underline text-center'>
-        Mahjong
-      </p>
-      <div className='my-2'>
-        <p>I started learning Mahjong over the pandemic, and have since become a player at various online and offline locations. I've provided broadcasting and commentating services to <span className='italic'>The NA Online Mahjong Ladder</span>, an online community that hosts Mahjong tournaments.</p>
+export default function Personal() {
+  // 1. Setup the ref to match the HTMLElement of the layout
+  const scrollRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const scrollElement = document.getElementById('scroll-root');
+    if (scrollElement) {
+      (scrollRef as any).current = scrollElement;
+    }
+  }, []);
+
+  // Content block
+  const pageContent = (
+    <>
+      <div id='titlehead'>
+        Personal
+        <hr className='profilehr' />
       </div>
-    </div>
-    <p className='profilehr text-4xl dark:text-white pt-[1.5rem] underline text-center'>
-      Fighting Games
-    </p>
-    <p>I've been involved in the Fighting Game Community for as long as I can remember. I got my start with Street Fighter IV, and since then, my love for the genre has lead me to discover new friendships both internationally and locally. I frequented the <span className='italic'>University of Waterloo Fighting Game Club</span> during my time in university, and have traveled internationally for events.</p>
-    <p className='profilehr text-4xl dark:text-white pt-[1.5rem] underline text-center'>
-      Tetris
-    </p>
-    <p>I play competitive modern Tetris, a version of Tetris that focuses on head-to-head interactions. I'm actively involved in the community and am currently lending my skills to <i>Dup Cup</i>, a tournament consisting of VTuber talents to showcase their proficiency in the sport.</p>
-    <p className='profilehr text-4xl dark:text-white pt-[1.5rem] underline text-center'>
-      Cosplay
-    </p>
-    <p>There's not a lot to write about here for cosplay, because it's (unsurprisingly) a very visual medium. I like to cosplay for events, and I try to keep things fresh by not doing the same thing twice.</p>
-  </div></>
+      <div className='about text-justify'>
+        <p className="mb-4">
+          Outside of engineering, my time is spent immersed in competitive subcultures. 
+          I’m driven by complex systems and high-skill-ceiling games.
+        </p>
 
-export default function Home() {
-  const scrollableDivRef = useRef<HTMLDivElement>(null)
-  return <Suspense fallback={<Loading />}>
-    <div className="lg:hidden flex flex-col min-h-screen h-fit dark:bg-[#3c3d37]">
-      <div id='mobile-main-content' className="mt-[3em] mx-auto p-4">
+        <section>
+          <p className='profilehr text-4xl dark:text-white pt-[1.5rem] underline text-center'>
+            Mahjong
+          </p>
+          <div className='my-2'>
+            <p>
+              I began studying Riichi Mahjong during the pandemic and have since transitioned from a casual student to a regular competitor in both online and offline circuits. Beyond playing, I have contributed to the scene as a broadcaster and commentator for <span className='italic'>The North American Online Mahjong Ladder</span>.
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <p className='profilehr text-4xl dark:text-white pt-[1.5rem] underline text-center'>
+            Fighting Games
+          </p>
+          <p>
+            A long-standing fixture in my life, the Fighting Game Community (FGC) is where I first discovered my passion for competitive play. Since my early days with Street Fighter IV, the genre has allowed me to build a global network of friends. I was an active member of the <span className='italic'>University of Waterloo Fighting Game Club</span> and continue to travel internationally to compete and connect with the community.
+          </p>
+        </section>
+
+        <section>
+          <p className='profilehr text-4xl dark:text-white pt-[1.5rem] underline text-center'>
+            Tetris
+          </p>
+          <p>
+            I specialize in competitive modern Tetris, focusing on head-to-head interaction and high-speed efficiency. My involvement extends into community organization; I’ve previously lent my technical and administrative skills to <span className='italic'>Dup Cup</span>, a tournament showcasing the proficiency of virtual entertainers (VTubers) in the sport.
+          </p>
+        </section>
+      </div>
+    </>
+  );
+
+  return (
+    <Suspense fallback={<Loading />}>
+      <div className="hidden lg:block">
+        <ScrollToTopButton scrollableDivRef={scrollRef} threshold={20} />
+        <Link href="/">
+          <div className='exit-button clickable'>Back</div>
+        </Link>
+      </div>
+      <div className="lg:contents flex flex-col p-4 lg:p-0">
         {pageContent}
       </div>
-    </div>
-    <div id="desktop-component" className="hidden lg:inline">
-      <ScrollToTopButton scrollableDivRef={scrollableDivRef} threshold={20}/>
-      <Link prefetch href="/">
-        <div className='exit-button clickable mr-5'>Back</div>
-      </Link>
-      <div className='content'  >
-        <div className='shoka__header' />
-        <div className='page-content mr-5' ref={scrollableDivRef}>
-          {pageContent}
-        </div>
-      </div>
-    </div>
-  </Suspense>
+    </Suspense>
+  );
 }

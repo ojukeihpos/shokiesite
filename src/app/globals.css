@@ -4,15 +4,14 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-start-rgb: transparent;
+  --background-end-rgb: transparent;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  background: transparent; 
+  margin: 0;
 }
 
 @layer utilities {
@@ -153,7 +152,7 @@ a.link:hover {
   background-color: #fbfbfb;
   border-left: 0.5vw solid #4d00f2;
   border-right: 0.5vw solid #868583;
-  padding: 0 5% 2.5% 5%;
+  padding: 0 2.5% 2.5% 2.5%;
   overflow: auto;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -162,22 +161,26 @@ a.link:hover {
 }
 
 .exit-button {
-  position: absolute;
-  top: 50%;
-  right: 60%;
-  z-index: 999;
-  background-image: url("./assets/images/arrows.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  color: white;
-  text-shadow: #c93e25 1px 0 10px;
+  position: fixed;
+  top: 30px;
+  right: 40px;
+  z-index: 1001;
+
+  padding: 5px 15px;
+  background: rgba(201, 62, 37, 0.1);
+  border: 1px solid #c93e25;
+  color: #c93e25;
+  text-transform: uppercase;
   font-weight: bold;
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  animation: exitButtonAppear 0.1s, pulseExit 5s infinite 0.1s;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
+.exit-button:hover {
+  background: #c93e25;
+  color: white;
+  box-shadow: 0 0 15px rgba(201, 62, 37, 0.5);
+}
 
 .socials__bar {
   text-align: center;
@@ -268,7 +271,6 @@ h1 {
 @media screen and (min-height: 1000px) and (min-width: 1000px) {
   #titlehead {
     padding: 5% 10% 0% 10%;
-    background-color: #00ffff95;
     position: relative;
     vertical-align: middle;
     text-align: center;
@@ -369,8 +371,6 @@ ul.profileNav li.active {
 
 @media screen and (min-height: 1000px) and (max-width: 1000px) {
   #titlehead {
-    padding: 10vw 10% 1em 10%;
-    background-color: #00ffff95;
     position: relative;
     vertical-align: middle;
     text-align: center;
@@ -393,7 +393,6 @@ ul.profileNav li.active {
 
 
 #page-wrap {
-  height: 100%;
   overflow: auto;
   z-index: 1;
 }
@@ -426,9 +425,11 @@ background-color: rgb(107, 107, 180);
 section {
   position: relative;
   padding-left: 3em;
+  /* Keep this for internal spacing */
   padding-right: 3em;
   padding-bottom: 1em;
-  width: 100vw;
+  width: 100%;
+  /* Changed from 100vw to 100% */
   z-index: 0;
   overflow: hidden;
 }
@@ -445,7 +446,6 @@ section p {
 @media screen and (max-height: 1000px) {
   #titlehead {
     top: 2.5rem;
-    padding: 1em 10% 0 10%;
     vertical-align: middle;
     text-align: center;
     font-size: 2rem;
@@ -791,7 +791,7 @@ a {
 }
 
 .shoka__header.mobile {
-  position: fixed;
+  position: relative;
   top: 0;
   width: 100%;
   display: flex;
@@ -852,8 +852,7 @@ a {
 
 /* General sidebar styles */
 .bm-menu {
-  background: #262e53;
-  padding: 1em 1.5em 0;
+  background: rgb(39, 21, 21);
   font-size: 1.15em;
 }
 
@@ -865,7 +864,6 @@ a {
 /* Wrapper for item list */
 .bm-item-list {
   color: #dad2c7;
-  padding: 0.8em;
 }
 
 /* Individual item */
@@ -937,10 +935,15 @@ a {
     color: #AE445A;
   }
 
-  #titlehead,
-  p,
-  li {
-    color: #eeeeee;
+  #titlehead {
+    color: #eeeeee !important;
+    background-color: transparent;
+  }
+
+  .page-content p,
+  .page-content li,
+  .page-content section p {
+    color: #eeeeee !important;
   }
 
   #cosplay-list>li {
@@ -951,7 +954,117 @@ a {
     filter: grayscale(99%);
   }
 
-  #titlehead {
-    background-color: transparent;
+  .profilehr {
+    border-top-color: #eeeeee !important;
   }
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  body {
+    overflow: auto;
+  }
+}
+
+.page-content {
+  /* This controls the width of the "box" */
+  width: 65% !important;
+
+  /* Standard Mecha spacing */
+  max-width: 1400px;
+  z-index: 50;
+}
+
+/* Adjust for smaller/laptop screens */
+@media screen and (max-width: 1400px) {
+  .page-content {
+    width: 60% !important;
+  }
+}
+
+/* Adjust the about section to handle the YouTube embed better */
+.about {
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+#titlehead {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+#backToTop {
+  transition: all 0.3s ease-in-out;
+}
+
+#backToTop:hover {
+  background-color: rgba(77, 0, 242, 0.2) !important;
+  border-color: #4d00f2 !important;
+  transform: translateY(-5px);
+  /* Lift up slightly on hover */
+}
+
+#shoka__frame,
+.shoka__footer,
+.parts,
+.straight_vents,
+.shoka__forward-vents {
+  /* This makes the mouse ignore these elements */
+  pointer-events: none !important;
+}
+
+#backToTop,
+.exit-button,
+a.link,
+.clickable {
+  pointer-events: auto !important;
+}
+
+#backToTop {
+  animation: HUD_FadeIn 0.3s ease-out;
+}
+
+@keyframes HUD_FadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 2s linear infinite;
+}
+
+@keyframes loading-bar {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-loading-bar {
+  animation: loading-bar 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }

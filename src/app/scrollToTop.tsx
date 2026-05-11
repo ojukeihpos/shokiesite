@@ -1,68 +1,80 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
-const ScrollToTopButton = (props: { scrollableDivRef: React.RefObject<HTMLDivElement>, threshold?: number }) => {
+interface ScrollToTopProps {
+    scrollableDivRef: React.RefObject<HTMLElement | null>;
+    threshold?: number;
+}
+
+const ScrollToTopButton = ({ scrollableDivRef, threshold = 10 }: ScrollToTopProps) => {
     const [isVisible, setIsVisible] = useState(false);
-    const scrollContainerRef = useRef(null)
-
-    useEffect(() => {
-        toggleVisibility()
-        if (props.scrollableDivRef.current) {
-            props.scrollableDivRef.current.addEventListener('scroll', toggleVisibility)
-            props.scrollableDivRef.current.addEventListener('resize', toggleVisibility)
-            return () => {
-                props.scrollableDivRef.current?.removeEventListener('scroll', toggleVisibility)
-                props.scrollableDivRef.current?.removeEventListener('resize', toggleVisibility)
-            }
-        }
-    }, [])
 
     const toggleVisibility = () => {
-        const target = props.scrollableDivRef.current
-        if (target) {
-            const threshold = props.threshold || 10
-            
-            if (target.scrollTop / (target.scrollHeight - target.clientHeight) >= threshold / 100) {
-                setIsVisible(true);
-            } else {
-                setIsVisible(false);
-            }
+    const target = scrollableDivRef.current;
+    if (target) {
+        if (target.scrollTop > 20) {
+            setIsVisible(true);
+        } else {
+            setIsVisible(false);
         }
-    };
+    }
+};
+
+    useEffect(() => {
+        const target = scrollableDivRef.current;
+
+        if (!target) {
+            const timeout = setTimeout(toggleVisibility, 100);
+            return () => clearTimeout(timeout);
+        }
+
+        toggleVisibility();
+
+        target.addEventListener('scroll', toggleVisibility);
+        window.addEventListener('resize', toggleVisibility);
+
+        return () => {
+            target.removeEventListener('scroll', toggleVisibility);
+            window.removeEventListener('resize', toggleVisibility);
+        };
+    }, [scrollableDivRef.current]);
 
     const scrollToTop = () => {
-        if (props.scrollableDivRef.current)
-            props.scrollableDivRef.current.scrollTo({
+        if (scrollableDivRef.current) {
+            scrollableDivRef.current.scrollTo({
                 top: 0,
                 behavior: 'smooth',
             });
+        }
     };
 
     return (
-        <div>
-            {isVisible && (
-                <button
-                    id='backToTop'
-                    ref={scrollContainerRef}
-                    onClick={scrollToTop}
-                    style={{
-                        position: 'fixed',
-                        top: '50px',
-                        right: '50px',
-                        backgroundColor: '#ffffff04',
-                        color: 'white',
-                        border: 'none',
-                        borderRadius: '5px',
-                        padding: '10px 15px',
-                        cursor: 'pointer',
-                        zIndex: 1000,
-                    }}
-                >
-                    Top
-                </button>
-            )}
-        </div>
+        <button
+            id='backToTop'
+            onClick={scrollToTop}
+            className="clickable"
+            style={{
+                position: 'fixed',
+                bottom: '40px',
+                right: '40px',
+                zIndex: 9999, // Crank this up
+                pointerEvents: 'auto', // Force it to accept clicks
+                backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                color: 'white',
+                border: '1px solid rgba(255, 255, 255, 0.2)', /* Added a subtle border */
+                borderRadius: '2px', /* Sharper corners for mecha look */
+                padding: '10px 15px',
+                cursor: 'pointer',
+                textShadow: '0 0 8px #4d00f2', /* Changed glow to blue/purple to contrast the red Back button */
+                fontWeight: 'bold',
+                textTransform: 'uppercase',
+                fontSize: '12px',
+                letterSpacing: '2px'
+            }}
+        >
+            ▲ Top
+        </button>
     );
 };
 
