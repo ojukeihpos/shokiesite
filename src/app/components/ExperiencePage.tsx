@@ -5,18 +5,58 @@ import Loading from '../loading';
 import ScrollToTopButton from '../scrollToTop';
 import { PageData } from '../types/experience';
 
+import Image from 'next/image';
+import arrowsImg from '../assets/images/arrows.png';
+
 interface Props {
   data: PageData;
 }
 
 export default function ExperiencePage({ data }: Props) {
-  const scrollRef = useRef<HTMLElement>(null);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+  const [showIndicator, setShowIndicator] = useState(true);
+
+  const onRefChange = (node: HTMLDivElement | null) => {
+    if (node) {
+      scrollRef.current = node;
+
+      const syncScroll = () => {
+        const isScrollable = node.scrollHeight > node.clientHeight;
+
+        const isAtTop = node.scrollTop < 20;
+
+        setShowIndicator(isScrollable && isAtTop);
+      };
+
+      node.addEventListener('scroll', syncScroll);
+
+      let count = 0;
+      const interval = setInterval(() => {
+        syncScroll();
+        if (count++ > 20) clearInterval(interval);
+      }, 50);
+    }
+  };
 
   useEffect(() => {
-    const scrollElement = document.getElementById('scroll-root');
-    if (scrollElement) {
-      (scrollRef as any).current = scrollElement;
+    const container = scrollRef.current;
+
+    const handleResize = () => {
+      if (container) {
+        const isScrollable = container.scrollHeight > container.clientHeight;
+        const isAtTop = container.scrollTop < 20;
+        setShowIndicator(isScrollable && isAtTop);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    if (container) {
+      container.scrollTo(0, 0);
+      handleResize();
     }
+
+    return () => window.removeEventListener('resize', handleResize);
   }, [data]);
 
   const pageContent = (
@@ -43,9 +83,9 @@ export default function ExperiencePage({ data }: Props) {
           <div key="other-entries-wrapper">
             <p className='profilehr text-4xl dark:text-white underline text-center'>Other</p>
             {data.otherEntries.map((item, i) => (
-              <p key={`other-row-${i}`} className='border-l-4 border-black dark:border-[#dad2c7] pl-4 my-2'>
+              <div key={`other-row-${i}`} className='border-l-4 border-neutral-900 dark:border-neutral-200 pl-4 my-2'>
                 - <span className='italic'>{item.org}</span> {item.role}
-              </p>
+              </div>
             ))}
           </div>
         )}
@@ -55,15 +95,41 @@ export default function ExperiencePage({ data }: Props) {
 
   return (
     <Suspense fallback={<Loading />}>
-      <div className="lg:contents flex flex-col p-4 lg:p-0">
-        {pageContent}
-      </div>
+      <div className="relative min-h-screen w-full">
+        <div className="page-content" ref={onRefChange}>
+          {pageContent}
+        </div>
 
-      <div className="hidden lg:block">
-        <Link href="/">
-          <div className='exit-button clickable'>Back</div>
-        </Link>
-        <ScrollToTopButton scrollableDivRef={scrollRef} />
+        <div className="hidden lg:block">
+          <div className="viewport-control-layer">
+            <div className="viewport-control-bar">
+              <Link href="/">
+                <div className='exit-button clickable'>
+                  <span className="exit-button-text">Back</span>
+                  <div className="exit-button-arrow">
+                    <Image
+                      src={arrowsImg}
+                      alt="Back arrow"
+                      style={{ transform: 'scaleX(-1)', objectFit: 'contain' }}
+                      priority
+                    />
+                  </div>
+                </div>
+              </Link>
+
+              <div className={`scroll-indicator ${!showIndicator ? 'fade-out' : ''}`}>
+                <div className="mouse-icon">
+                  <div className="wheel"></div>
+                </div>
+                <div className="scroll-arrow"></div>
+              </div>
+
+              <div className="top-button-wrapper">
+                <ScrollToTopButton scrollableDivRef={scrollRef} />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </Suspense>
   );
@@ -96,7 +162,7 @@ function sectionLoop(data: PageData) {
             </div>
           )}
 
-          <div className='border-l-4 border-black dark:border-[#dad2c7] pl-4'>
+          <div className='border-l-4 border-neutral-900 dark:border-neutral-200 pl-4'>
             {item.bullets.map((bullet, bulletIdx) => (
               <p key={`bullet-${sectionIdx}-${itemIdx}-${bulletIdx}`}>- {bullet}</p>
             ))}

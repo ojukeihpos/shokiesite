@@ -10,42 +10,35 @@ interface ScrollToTopProps {
 const ScrollToTopButton = ({ scrollableDivRef, threshold = 10 }: ScrollToTopProps) => {
     const [isVisible, setIsVisible] = useState(false);
 
-    const toggleVisibility = () => {
-    const target = scrollableDivRef.current;
-    if (target) {
-        if (target.scrollTop > 20) {
-            setIsVisible(true);
-        } else {
-            setIsVisible(false);
-        }
-    }
-};
-
     useEffect(() => {
-        const target = scrollableDivRef.current;
+        const target = scrollableDivRef.current ||
+            document.getElementById('scroll-root') ||
+            document.documentElement;
 
-        if (!target) {
-            const timeout = setTimeout(toggleVisibility, 100);
-            return () => clearTimeout(timeout);
-        }
+        if (!target) return;
 
-        toggleVisibility();
+        const handleScroll = () => {
+            const scrollPos = target === document.documentElement
+                ? window.scrollY
+                : target.scrollTop;
 
-        target.addEventListener('scroll', toggleVisibility);
-        window.addEventListener('resize', toggleVisibility);
-
-        return () => {
-            target.removeEventListener('scroll', toggleVisibility);
-            window.removeEventListener('resize', toggleVisibility);
+            setIsVisible(scrollPos > 100);
         };
-    }, [scrollableDivRef.current]);
+
+        const eventTarget = target === document.documentElement ? window : target;
+
+        eventTarget.addEventListener('scroll', handleScroll);
+        return () => eventTarget.removeEventListener('scroll', handleScroll);
+    }, [scrollableDivRef]);
 
     const scrollToTop = () => {
-        if (scrollableDivRef.current) {
-            scrollableDivRef.current.scrollTo({
-                top: 0,
-                behavior: 'smooth',
-            });
+        const target = scrollableDivRef.current ||
+            document.getElementById('scroll-root');
+
+        if (target) {
+            target.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     };
 
@@ -58,19 +51,20 @@ const ScrollToTopButton = ({ scrollableDivRef, threshold = 10 }: ScrollToTopProp
                 position: 'fixed',
                 bottom: '40px',
                 right: '40px',
-                zIndex: 9999, // Crank this up
-                pointerEvents: 'auto', // Force it to accept clicks
+                zIndex: 9999,
+                pointerEvents: 'auto',
                 backgroundColor: 'rgba(255, 255, 255, 0.05)',
                 color: 'white',
-                border: '1px solid rgba(255, 255, 255, 0.2)', /* Added a subtle border */
-                borderRadius: '2px', /* Sharper corners for mecha look */
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                borderRadius: '2px',
                 padding: '10px 15px',
                 cursor: 'pointer',
-                textShadow: '0 0 8px #4d00f2', /* Changed glow to blue/purple to contrast the red Back button */
+                textShadow: '0 0 8px #4d00f2',
                 fontWeight: 'bold',
                 textTransform: 'uppercase',
                 fontSize: '12px',
-                letterSpacing: '2px'
+                letterSpacing: '2px',
+                display: isVisible ? 'block' : 'none'
             }}
         >
             ▲ Top

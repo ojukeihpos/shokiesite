@@ -19,11 +19,16 @@ export default function NotFound() {
         </div>
 
         <div id="desktop-component" className="hidden lg:inline">
-            <Link prefetch href="/">
-                <div className='exit-button clickable mr-5'>Back</div>
-            </Link>
-            <div className='page-content mr-5'>
-                {pageContent}
+            <div className="content-wrapper">
+                <div className='page-content mr-5'>
+                    {pageContent}
+                </div>
+                <Link prefetch href="/">
+                    <div className='exit-button clickable'>
+                        <span className="exit-button-text">Back</span>
+                        <div className="exit-button-arrow"></div>
+                    </div>
+                </Link>
             </div>
         </div>
     </div>

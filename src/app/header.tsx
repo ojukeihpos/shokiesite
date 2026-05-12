@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { slide as Slide } from 'react-burger-menu';
 import { Title } from './Title';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 interface Props {
     pages: [...{ id: number, text: string, page: string }[]]

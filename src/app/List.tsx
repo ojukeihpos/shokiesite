@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useCallback, useState } from 'react';
+import { useEffect, useCallback, useState } from 'react';
 import { ListOption } from './ListOption';
 import { usePathname } from 'next/navigation';
 
@@ -29,10 +29,10 @@ export const List = ({ pages }: Props) => {
     }, []);
 
     useEffect(() => {
-        const currentPage = pages.find(p => 
+        const currentPage = pages.find(p =>
             p.page === "/" ? pathName === "/" : pathName === "/" + p.page
         );
-        
+
         if (currentPage) {
             setSelectedId(currentPage.id);
             setTimeout(() => updateHighlighter(currentPage.id), 100);
@@ -47,8 +47,8 @@ export const List = ({ pages }: Props) => {
             </div>
             <ul className="list-group">
                 {pages.map(item => (
-                    <div 
-                        key={item.id} 
+                    <div
+                        key={item.id}
                         onMouseEnter={() => updateHighlighter(item.id)}
                         onMouseLeave={() => updateHighlighter(selectedId)}
                         onClick={() => setSelectedId(item.id)}
