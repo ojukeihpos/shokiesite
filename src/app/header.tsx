@@ -30,7 +30,7 @@ export const Header = (props: Props) => {
                         href={page.page === "/" ? "/" : `/${page.page}`}
                         key={page.id}
                         onClick={() => setIsOpen(false)}
-                        className='sidebar-tab clickable text-white text-2xl my-4 uppercase tracking-widest'
+                        className='sidebar-tab clickable text-white text-base sm:text-lg my-3 uppercase tracking-wider whitespace-nowrap'
                     >
                         {page.text}
                     </Link>

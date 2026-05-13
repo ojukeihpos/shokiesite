@@ -14,7 +14,10 @@ const PageContent = () => (
       </p>
 
       <p className="text-center opacity-70 italic text-sm">
-        Pick a page on the left to see more.
+        Pick a page on the
+        <span className="hidden lg:inline"> left </span>
+        <span className="lg:hidden"> top right </span>
+        to see more.
       </p>
     </div>
 
