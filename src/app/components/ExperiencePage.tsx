@@ -4,9 +4,13 @@ import Link from 'next/link';
 import Loading from '../loading';
 import ScrollToTopButton from '../scrollToTop';
 import { PageData } from '../types/experience';
-
 import Image from 'next/image';
 import arrowsImg from '../assets/images/arrows.png';
+
+// PDF Imports
+import { PDFDownloadLink } from '@react-pdf/renderer';
+import { ResumePDF } from './ResumePDF';
+import { sanitizeForPDF } from '../utils/pdf-helpers';
 
 interface Props {
   data: PageData;
@@ -15,21 +19,21 @@ interface Props {
 export default function ExperiencePage({ data }: Props) {
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const [showIndicator, setShowIndicator] = useState(true);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const onRefChange = (node: HTMLDivElement | null) => {
     if (node) {
       scrollRef.current = node;
-
       const syncScroll = () => {
         const isScrollable = node.scrollHeight > node.clientHeight;
-
         const isAtTop = node.scrollTop < 20;
-
         setShowIndicator(isScrollable && isAtTop);
       };
-
       node.addEventListener('scroll', syncScroll);
-
       let count = 0;
       const interval = setInterval(() => {
         syncScroll();
@@ -40,7 +44,6 @@ export default function ExperiencePage({ data }: Props) {
 
   useEffect(() => {
     const container = scrollRef.current;
-
     const handleResize = () => {
       if (container) {
         const isScrollable = container.scrollHeight > container.clientHeight;
@@ -48,21 +51,36 @@ export default function ExperiencePage({ data }: Props) {
         setShowIndicator(isScrollable && isAtTop);
       }
     };
-
     window.addEventListener('resize', handleResize);
-
     if (container) {
       container.scrollTo(0, 0);
       handleResize();
     }
-
     return () => window.removeEventListener('resize', handleResize);
   }, [data]);
 
+  // Prep data for PDF
+  const allItemsForPDF = data.sections.flatMap(section => sanitizeForPDF(section.items));
+
   const pageContent = (
     <>
-      <div className='shoka__header'>
-        <div id='titlehead'>{data.title}</div>
+      <div className='shoka__header relative'>
+        <div id='titlehead' className="text-center w-full"> 
+          {data.title}
+        </div>
+
+        {isClient && (
+          <div className="absolute top-0 right-0 mt-2">
+            <PDFDownloadLink
+              document={<ResumePDF title={data.title} items={allItemsForPDF} links={data.headerLinks}/>}
+              fileName={`Sophie_${data.title.replace(/\s+/g, '_')}_Resume.pdf`}
+              className="px-3 py-1 border border-[#FFB100] text-[#FFB100] font-mono text-[10px] uppercase hover:bg-[#FFB100] hover:text-black transition-all"
+            >
+              {({ loading }) => (loading ? '[ BUSY... ]' : '[ EXPORT_PDF ]')}
+            </PDFDownloadLink>
+          </div>
+        )}
+
         <div className='socials__bar'>
           {data.headerLinks.map((link, i) => (
             <React.Fragment key={`header-link-${link.label}-${i}`}>
@@ -76,15 +94,14 @@ export default function ExperiencePage({ data }: Props) {
 
       <div className='about text-justify'>
         {data.intro && <p className="mb-4">{data.intro}</p>}
-
         {sectionLoop(data)}
-
         {data.otherEntries && (
           <div key="other-entries-wrapper">
             <p className='profilehr text-4xl dark:text-white underline text-center'>Other</p>
             {data.otherEntries.map((item, i) => (
-              <div key={`other-row-${i}`} className='border-l-4 border-neutral-900 dark:border-neutral-200 pl-4 my-2'>
-                - <span className='italic'>{item.org}</span> {item.role}
+              <div key={`other-row-${i}`} className='border-neutral-900 dark:border-neutral-200 my-2'>
+                <span className='underline bold'>{item.org}</span>
+                <p className='border-l-4 pl-4'>{item.role}</p>
               </div>
             ))}
           </div>
