@@ -115,7 +115,7 @@ export default function Page() {
       <div className="page-content">
         <div ref={topSentinelRef} className="h-px w-full absolute top-0 pointer-events-none" />
 
-        <div id="titlehead">Welcome!</div>
+        <div id="titlehead" className="text-center w-full">Welcome!</div>
         <hr className='profilehr' />
         <div className='about'>
           <PageContent />

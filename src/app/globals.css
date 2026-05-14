@@ -175,6 +175,10 @@ a {
   pointer-events: none;
 }
 
+#titlehead {
+  font-size: 2.5rem;
+}
+
 @media screen and (min-width: 1000px) and (min-height: 1000px) {
 
   .page-content,
