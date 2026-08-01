@@ -35,7 +35,7 @@ export const SOFTWARE_CONTENT: PageData = {
                     skills: "Cloud Architecture, System Design, Hardware Optimization",
                     bullets: [
                         "Optimized enterprise content pipelines through the strategic implementation of Hybrid Cloud storage solutions and high-availability hardware configurations.",
-                        "Architected Data Redundancy and Disaster Recovery protocols, resulting in significantly increased system uptime and the elimination of critical workflow bottlenecks.",
+                        "Architected Data Redundancy and Disaster Recovery protocols, resulting in 100% system uptime and the consolidation of media files into a central storage system.",
                         "Evaluated and implemented hardware optimization strategies that extended system longevity and reduced operational overhead."
                     ]
                 },
@@ -47,7 +47,7 @@ export const SOFTWARE_CONTENT: PageData = {
                     bullets: [
                         "Architected and maintained a robust React/TypeScript application serving as a core educational platform for university-level departments.",
                         "Led a critical Database Migration of MongoDB instances to secure, compliant university infrastructure, ensuring data sovereignty and security.",
-                        "Engineered automated data-processing utilities in Java to streamline research workflows, reducing manual processing time."
+                        "Engineered automated data-processing utilities in Java to streamline research workflows, reducing manual processing time by 100%."
                     ],
                     highlight: (
                         <React.Fragment key="sw-h2">
@@ -71,6 +71,7 @@ export const OTHER_CONTENT: PageData = {
     headerLinks: [
         { label: "sophie@shokie.xyz", href: "mailto:sophie@shokie.xyz" }
     ],
+    intro: "Hello! There's some other work I've done that I'll be withholding from here due to privacy reasons, but this page basically covers anything non-software related that I've done professionally.",
     sections: [
         {
             category: "Professional Positions",
@@ -81,7 +82,7 @@ export const OTHER_CONTENT: PageData = {
                     location: "Remote",
                     skills: "DaVinci Resolve, Clip Studio Paint",
                     bullets: [
-                        <React.Fragment key="ed-b1">Lead Editor for <Link href="https://twitch.tv/WAR6Actual/" className='link italic'>WAR6Actual</Link> and <Link href="https://twitch.tv/wild_robinn/" className='link italic'>WildRobin</Link>.</React.Fragment>,
+                        <React.Fragment key="ed-b1">Lead Editor for <Link href="https://twitch.tv/WAR6Actual/" className='link italic'>WAR6Actual</Link>.</React.Fragment>,
                         "Executing end-to-end post-production workflows, synthesizing long-form live broadcasts into high-impact, multi-platform media assets.",
                         "Optimized visual assets and thumbnails using A/B testing and viewer analytics, resulting in a 45% measurable increase in Click-Through Rate (CTR) across lead channels.",
                         "Managed high-velocity post-production workflows for multiple creators, consistently improving audience retention through data-backed editing strategies."
@@ -102,8 +103,11 @@ export const OTHER_CONTENT: PageData = {
                     location: "Electric Clash",
                     subTitle: <Link key="link-inc" href="https://incendium.gg/" className='link italic'>Incendium Gaming</Link>,
                     showBlueBar: true,
+                    highlight: "Spearheaded international player relations, coordinating logistics and cultural accommodations for global competitors to ensure peak performance readiness.",
+                    skills: "Data Integrity, Logistics Coordination, Crisis Management, Player Relations",
                     bullets: [
-                        "Managed real-time data verification and logging for major eSports broadcasts, ensuring zero-latency communication between administrative and production teams.",
+                        "Owned on-site data correctness and bracket integrity for major eSports broadcasts, ensuring zero-latency communication between administrative and production teams.",
+                        "Managed international competitor relations as a direct data-verification layer, interfacing with global talent to confirm accommodation needs, schedule compliance, and profile accuracy.",
                         "Liaised with digital marketing and broadcast graphics departments to provide validated, real-time datasets for live on-air visuals."
                     ]
                 },

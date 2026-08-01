@@ -5,7 +5,7 @@ export interface JobItem {
   title: string;
   date: string;
   location?: string | ReactNode;
-  subTitle?: ReactNode; // Add this line
+  subTitle?: ReactNode;
   skills?: string;
   showBlueBar?: boolean;
   highlight?: ReactNode;

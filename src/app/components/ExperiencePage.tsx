@@ -7,7 +7,6 @@ import { PageData } from '../types/experience';
 import Image from 'next/image';
 import arrowsImg from '../assets/images/arrows.png';
 
-// PDF Imports
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import { ResumePDF } from './ResumePDF';
 import { sanitizeForPDF } from '../utils/pdf-helpers';
@@ -59,7 +58,6 @@ export default function ExperiencePage({ data }: Props) {
     return () => window.removeEventListener('resize', handleResize);
   }, [data]);
 
-  // Prep data for PDF
   const allItemsForPDF = data.sections.flatMap(section => sanitizeForPDF(section.items));
 
   const pageContent = (
@@ -164,24 +162,27 @@ function sectionLoop(data: PageData) {
             <p className='text-xl'>{item.title}</p>
             <p className='sm:text-xl'>{item.date}</p>
           </span>
-          {item.location && <div>{item.location}</div>}
-          {item.subTitle && <div>{item.subTitle}</div>}
+          {item.location && <div className="text-sm opacity-80">{item.location}</div>}
+          
+          {item.subTitle && <div className="my-0.5">{item.subTitle}</div>}
 
           {(item.skills || item.showBlueBar) && (
-            <div className='border-l-4 border-blue-400 pl-4 my-2'>
+            <div className='border-l-4 border-blue-400 pl-4 my-2 text-sm'>
               {item.skills && <>Skills: {item.skills}</>}
             </div>
           )}
 
           {item.highlight && (
-            <div className='border-l-4 border-[#c93e25] pl-4 my-2 italic text-sm'>
+            <div className='border-l-4 border-[#c93e25] pl-4 my-2 italic text-sm leading-relaxed'>
               {item.highlight}
             </div>
           )}
 
-          <div className='border-l-4 border-neutral-900 dark:border-neutral-200 pl-4'>
+          <div className='border-l-4 border-neutral-900 dark:border-neutral-200 pl-4 space-y-1.5 mt-2'>
             {item.bullets.map((bullet, bulletIdx) => (
-              <p key={`bullet-${sectionIdx}-${itemIdx}-${bulletIdx}`}>- {bullet}</p>
+              <p key={`bullet-${sectionIdx}-${itemIdx}-${bulletIdx}`} className="leading-relaxed text-sm sm:text-base">
+                - {bullet}
+              </p>
             ))}
           </div>
         </div>
